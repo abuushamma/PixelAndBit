@@ -1,0 +1,116 @@
+@page
+@model PixelAndBit.Web.Areas.Identity.Pages.Account.VerifyEmailModel
+@{
+    ViewData["Title"] = "Verify Email";
+    var toast = TempData["pb_toast"]?.ToString();
+    var toastErr = TempData["pb_toast_error"]?.ToString();
+    var resendDisabled = Model.ResendCooldownSeconds > 0;
+}
+
+<div class="pb-section pb-fade">
+    <div class="pb-auth-shell mx-auto">
+        <div class="text-center mb-4">
+            <h1 class="h2 font-orbitron mb-2">Verify your email</h1>
+            <p class="text-muted mb-0">
+                We sent a <span class="pb-highlight">5-digit code</span> to <span class="pb-highlight">@Model.Email</span>.
+            </p>
+        </div>
+
+        <div class="pb-surface pb-card pb-auth-card p-4 p-md-5">
+            @if (!string.IsNullOrWhiteSpace(toastErr))
+            {
+                <div class="mb-3 p-3" style="background: rgba(255, 80, 120, 0.10); border: 1px solid rgba(255, 80, 120, 0.35); border-radius: 14px;">
+                    <div class="small text-uppercase text-muted mb-1">Email delivery failed</div>
+                    <div style="color: rgba(255,255,255,0.92);">@toastErr</div>
+                </div>
+            }
+            else if (!string.IsNullOrWhiteSpace(toast))
+            {
+                <div class="mb-3 p-3" style="background: rgba(100,233,255,0.10); border: 1px solid rgba(100,233,255,0.25); border-radius: 14px;">
+                    <div style="color: rgba(255,255,255,0.92);">@toast</div>
+                </div>
+            }
+
+            <form id="pb-verify-form" method="post" class="d-grid gap-3">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <input type="hidden" asp-for="Email" />
+                <input type="hidden" asp-for="ReturnUrl" />
+
+                <div>
+                    <label class="form-label fw-semibold text-muted" asp-for="Input.Code">Verification code</label>
+                    <input id="pb-verify-code"
+                           class="form-control pb-input text-center font-orbitron"
+                           asp-for="Input.Code"
+                           inputmode="numeric"
+                           autocomplete="one-time-code"
+                           maxlength="5"
+                           placeholder="12345"
+                           autofocus
+                           style="letter-spacing: 0.35em; font-size: 1.25rem;" />
+                    <span asp-validation-for="Input.Code" class="text-danger small"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 pb-btn-glow">Verify &amp; Continue</button>
+            </form>
+
+            <form method="post" asp-page-handler="Resend" class="mt-3">
+                <input type="hidden" name="email" value="@Model.Email" />
+                <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+                <button type="submit"
+                        id="pb-resend-btn"
+                        class="btn btn-outline-primary w-100 pb-btn-glow"
+                        @(resendDisabled ? "disabled" : null)
+                        aria-describedby="pb-resend-hint">
+                    Resend code
+                </button>
+                <p id="pb-resend-hint" class="small text-muted text-center mt-2 mb-0"></p>
+            </form>
+
+            <div class="mt-3 text-center">
+                <a class="small text-muted pb-auth-link" asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Back to sign in</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        (function () {
+            var initialCooldown = @Model.ResendCooldownSeconds;
+            var form = document.getElementById('pb-verify-form');
+            var input = document.getElementById('pb-verify-code');
+            var resendBtn = document.getElementById('pb-resend-btn');
+            var resendHint = document.getElementById('pb-resend-hint');
+
+            if (input) {
+                input.addEventListener('input', function (e) {
+                    var v = (e.target.value || '').replace(/\D/g, '').slice(0, 5);
+                    e.target.value = v;
+                    if (v.length === 5 && form) {
+                        if (typeof form.requestSubmit === 'function') {
+                            form.requestSubmit();
+                        } else {
+                            form.submit();
+                        }
+                    }
+                });
+            }
+
+            function tickCooldown(seconds) {
+                if (!resendBtn || !resendHint) return;
+                if (seconds <= 0) {
+                    resendBtn.disabled = false;
+                    resendHint.textContent = '';
+                    return;
+                }
+                resendBtn.disabled = true;
+                resendHint.textContent = 'You can request a new code in ' + seconds + 's.';
+                window.setTimeout(function () { tickCooldown(seconds - 1); }, 1000);
+            }
+
+            tickCooldown(initialCooldown);
+        })();
+    </script>
+}

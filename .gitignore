@@ -1,0 +1,22 @@
+# Build outputs
+bin/
+obj/
+
+# Local IDE user files
+*.csproj.user
+
+# Node / Tailwind
+node_modules/
+
+# Windows metadata
+desktop.ini
+
+# Old SQLite database (project now uses SQL Server — kept as local backup only)
+PixelAndBit.Web/pixelbit.db
+PixelAndBit.Web/pixelbit.db-wal
+PixelAndBit.Web/pixelbit.db-shm
+
+# Temporary doc-build logs
+docs/_pixelbit_doc_chrome_err.log
+docs/_pixelbit_doc_chrome_out.log
+docs/_pixelbit_doc_tmp.html

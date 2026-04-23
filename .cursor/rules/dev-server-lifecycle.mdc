@@ -1,0 +1,11 @@
+---
+description: Do not stop the PixelAndBit dev server unless the user explicitly asks to stop it
+alwaysApply: true
+---
+
+# Dev server lifecycle (PixelAndBit)
+
+- **Never** run `Stop-Process`, taskkill, or similar to terminate `PixelAndBit.Web`, `dotnet`, or Kestrel **unless the user explicitly asks** to stop or restart the dev server (e.g. "سكّر السيرفر", "stop the server").
+- If `dotnet build` fails because `PixelAndBit.Web.exe` or DLLs are locked, **do not** kill the running app to fix the lock unless the user asked to stop the server. Prefer `dotnet build --no-incremental` on another path, or explain that the dev server holds the lock and they can stop it when they choose.
+- When starting the app for local work, **prefer** telling the user to run `scripts/start-dev.ps1` or double‑click `scripts/start-dev.bat` in a **dedicated terminal/window they keep open**, instead of relying on background `dotnet run` that may end when the session ends.
+- `scripts/start-dev.ps1` uses `dotnet watch run` so the process stays up until the user closes it or presses Ctrl+C.

@@ -1,0 +1,11 @@
+{
+  "name": "pixelandbit",
+  "private": true,
+  "scripts": {
+    "dev": "dotnet run --project PixelAndBit.Web/PixelAndBit.Web.csproj --launch-profile http",
+    "start": "dotnet run --project PixelAndBit.Web/PixelAndBit.Web.csproj --launch-profile http"
+  },
+  "dependencies": {
+    "framer-motion": "^12.38.0"
+  }
+}

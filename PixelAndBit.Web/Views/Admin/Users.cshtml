@@ -1,0 +1,91 @@
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@model List<IdentityUser>
+
+@{
+    ViewData["Title"] = "Users";
+    var total = Model.Count;
+    var confirmed = Model.Count(u => u.EmailConfirmed);
+}
+
+<div class="pb-section pb-fade">
+    <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-4">
+        <div>
+            <div class="text-muted small text-uppercase">Admin</div>
+            <h1 class="h3 font-orbitron mb-0">Users</h1>
+            <div class="text-muted small mt-1">@total total • @confirmed confirmed</div>
+        </div>
+        <a class="btn btn-outline-primary pb-btn-glow" asp-controller="Admin" asp-action="Index">Back</a>
+    </div>
+
+    <div class="pb-surface pb-card p-3 p-md-4">
+        <div class="table-responsive">
+            <table class="table table-dark table-borderless align-middle mb-0" style="--bs-table-bg: transparent;">
+                <thead style="color: rgba(255,255,255,0.75);">
+                <tr>
+                    <th class="font-orbitron" style="letter-spacing:.08em;">Email</th>
+                    <th>Confirmed</th>
+                    <th>Phone</th>
+                    <th class="text-end">Lockout</th>
+                    <th class="text-end">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var u in Model)
+                {
+                    <tr style="border-top: 1px solid rgba(157,78,221,0.14);">
+                        <td>
+                            <div style="color: rgba(255,255,255,0.92);">@u.Email</div>
+                            <div class="text-muted small">ID: @u.Id</div>
+                        </td>
+                        <td>
+                            @if (u.EmailConfirmed)
+                            {
+                                <span class="badge" style="background: rgba(46,243,210,0.14); border: 1px solid rgba(46,243,210,0.40); color: rgba(46,243,210,0.92);">
+                                    Yes
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="badge" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.82);">
+                                    No
+                                </span>
+                            }
+                        </td>
+                        <td class="text-muted">@u.PhoneNumber</td>
+                        <td class="text-end text-muted" style="white-space: nowrap;">
+                            @if (u.LockoutEnd.HasValue && u.LockoutEnd.Value > DateTimeOffset.UtcNow)
+                            {
+                                <span>Until @u.LockoutEnd.Value.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</span>
+                            }
+                            else
+                            {
+                                <span>—</span>
+                            }
+                        </td>
+                        <td class="text-end">
+                            @if (User.FindFirstValue(ClaimTypes.NameIdentifier) == u.Id)
+                            {
+                                <span class="text-muted small">This is you</span>
+                            }
+                            else
+                            {
+                                <form method="post" asp-controller="Admin" asp-action="DeleteUser" asp-route-id="@u.Id" class="d-inline">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit"
+                                            class="btn btn-sm btn-outline-primary pb-btn-glow"
+                                            style="border-color: rgba(255,80,120,0.45) !important; color: rgba(255,200,215,0.95) !important;"
+                                            onclick="return confirm('Delete this user?');">
+                                        Delete
+                                    </button>
+                                </form>
+                            }
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

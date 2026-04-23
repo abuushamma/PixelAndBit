@@ -1,0 +1,62 @@
+@model PixelAndBit.Web.Models.AdminProductEditVm
+
+@{
+    ViewData["Title"] = "Add Product";
+}
+
+<div class="pb-section pb-fade">
+    <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-4">
+        <div>
+            <div class="text-muted small text-uppercase">Admin</div>
+            <h1 class="h3 font-orbitron mb-0">Add Product</h1>
+        </div>
+        <a class="btn btn-outline-primary pb-btn-glow" asp-controller="Admin" asp-action="Products">Back</a>
+    </div>
+
+    <div class="pb-surface pb-card p-4 p-md-5">
+        <form method="post" asp-controller="Admin" asp-action="ProductCreate" class="needs-validation" novalidate>
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="row g-3">
+                <div class="col-12">
+                    <label asp-for="Name" class="form-label fw-semibold text-muted">Name</label>
+                    <input asp-for="Name" class="form-control pb-input" />
+                    <span asp-validation-for="Name" class="text-danger small"></span>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <label asp-for="Price" class="form-label fw-semibold text-muted">Price (JOD)</label>
+                    <input asp-for="Price" class="form-control pb-input" />
+                    <span asp-validation-for="Price" class="text-danger small"></span>
+                </div>
+                <div class="col-12 col-md-4">
+                    <label asp-for="StockQuantity" class="form-label fw-semibold text-muted">Stock</label>
+                    <input asp-for="StockQuantity" class="form-control pb-input" />
+                    <span asp-validation-for="StockQuantity" class="text-danger small"></span>
+                </div>
+                <div class="col-12 col-md-4">
+                    <label asp-for="ImageUrl" class="form-label fw-semibold text-muted">Image URL (optional)</label>
+                    <input asp-for="ImageUrl" class="form-control pb-input" placeholder="https://..." />
+                    <span asp-validation-for="ImageUrl" class="text-danger small"></span>
+                </div>
+
+                <div class="col-12">
+                    <label asp-for="Description" class="form-label fw-semibold text-muted">Description</label>
+                    <textarea asp-for="Description" rows="5" class="form-control pb-input"></textarea>
+                    <span asp-validation-for="Description" class="text-danger small"></span>
+                </div>
+            </div>
+
+            <div class="mt-4 d-flex gap-2">
+                <button type="submit" class="btn btn-primary pb-btn-glow">Save</button>
+                <a class="btn btn-outline-primary pb-btn-glow" asp-controller="Admin" asp-action="Products">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

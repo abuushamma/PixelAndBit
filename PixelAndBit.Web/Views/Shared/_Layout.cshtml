@@ -1,0 +1,75 @@
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Antiforgery
+@inject PixelAndBit.Application.Interfaces.ICartService CartService
+@inject Microsoft.Extensions.Localization.IStringLocalizer<PixelAndBit.Web.SharedResource> T
+@using System.Globalization
+
+@{
+    var lang = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var isAr = lang == "ar";
+}
+<!DOCTYPE html>
+<html lang="@lang" dir="@(isAr ? "rtl" : "ltr")">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Pixel&amp;Bit</title>
+    <link rel="icon" href="~/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Orbitron:wght@500;600;700&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    @if (isAr)
+    {
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />
+    }
+    else
+    {
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    }
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/pixelbit.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PixelAndBit.Web.styles.css" asp-append-version="true" />
+</head>
+<body class="@(isAr ? "pb-rtl" : "pb-ltr") pb-has-fixed-header">
+    <header class="pb-header-fixed">
+        @await Html.PartialAsync("_Navbar")
+    </header>
+    <div class="container pb-section pb-fade" style="flex: 1 1 auto;">
+        <main id="main-content" role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer pb-footer text-muted">
+        <div class="container">
+            <span class="pb-highlight">Pixel&amp;Bit</span>
+            <span class="mx-2">|</span>
+            <a class="pb-footer-link" href="https://www.google.com/maps/place/Pixel%26bit/%4032.0207621,35.9043105,15z/data=!4m6!3m5!1s0x151b61d6e8f273a5:0xa63cf2fb0dc9184f!8m2!3d32.010135!4d35.945852!16s%2Fg%2F11z2wkcm62?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+                @T["Footer.Location"]
+            </a>
+            <span class="mx-2">|</span>
+            <a class="pb-footer-link pb-ltr-inline" href="https://wa.me/962785291744" target="_blank" rel="noopener noreferrer">
+                <span class="pb-ltr-inline">0785291744</span>
+            </a>
+            <span class="mx-2">•</span>
+            <a class="d-inline-flex align-items-center gap-2" href="https://www.instagram.com/pixelbit.jo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <span class="pb-ig-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 5.1A2.9 2.9 0 1 0 8 10.9 2.9 2.9 0 0 0 8 5.1Zm0 4.8A1.9 1.9 0 1 1 8 6.1a1.9 1.9 0 0 1 0 3.8Z"/>
+                        <path d="M12.445 3.555a1.08 1.08 0 1 1-2.16 0 1.08 1.08 0 0 1 2.16 0Z"/>
+                        <path d="M5.03 0h5.94C13.742 0 16 2.258 16 5.03v5.94C16 13.742 13.742 16 10.97 16H5.03C2.258 16 0 13.742 0 10.97V5.03C0 2.258 2.258 0 5.03 0Zm5.94 1H5.03C2.81 1 1 2.81 1 5.03v5.94C1 13.19 2.81 15 5.03 15h5.94c2.22 0 4.03-1.81 4.03-4.03V5.03C15 2.81 13.19 1 10.97 1Z"/>
+                    </svg>
+                </span>
+                pixelbit.jo
+            </a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.__pb = window.__pb || {};
+        window.__pb.csrf = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Antiforgery.GetAndStoreTokens(Context).RequestToken));
+    </script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

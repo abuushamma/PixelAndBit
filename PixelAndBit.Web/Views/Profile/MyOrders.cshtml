@@ -1,0 +1,50 @@
+@model IReadOnlyList<PixelAndBit.Domain.Entities.Order>
+
+@{
+    ViewData["Title"] = "My Orders";
+}
+
+<div class="pb-section pb-fade">
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+        <h1 class="h2 font-orbitron mb-0">My Orders</h1>
+        <a class="btn btn-outline-primary pb-btn-glow" asp-controller="Profile" asp-action="Index">Back</a>
+    </div>
+
+    <div class="pb-surface pb-card p-3 p-md-4 pb-fade" style="backdrop-filter: blur(15px);">
+        @if (Model.Count == 0)
+        {
+            <div class="text-muted">No orders yet.</div>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-dark align-middle mb-0" style="--bs-table-bg: transparent; --bs-table-striped-bg: rgba(255,255,255,0.03);">
+                    <thead>
+                    <tr style="color: rgba(255,255,255,0.85);">
+                        <th>Order</th>
+                        <th>Status</th>
+                        <th class="text-end">Total</th>
+                        <th class="text-end">Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var o in Model)
+                    {
+                        <tr>
+                            <td class="font-monospace">@o.Id</td>
+                            <td>
+                                <span class="badge" style="background: rgba(195,32,173,0.14); border: 1px solid rgba(195,32,173,0.45); color: rgba(255,255,255,0.9);">
+                                    @o.Status
+                                </span>
+                            </td>
+                            <td class="text-end">@o.TotalAmount.ToString("0.##") JOD</td>
+                            <td class="text-end text-muted">@o.OrderDate.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div>
+

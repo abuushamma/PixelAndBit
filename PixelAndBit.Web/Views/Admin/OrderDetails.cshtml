@@ -1,0 +1,104 @@
+@using PixelAndBit.Domain.Enums
+@model PixelAndBit.Domain.Entities.Order
+
+@{
+    ViewData["Title"] = "Order Details";
+    var itemsCount = Model.Items?.Sum(i => i.Quantity) ?? 0;
+}
+
+<div class="pb-section pb-fade">
+    <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-4">
+        <div>
+            <div class="text-muted small text-uppercase">Order</div>
+            <h1 class="h4 font-orbitron mb-0">@Model.Id</h1>
+            <div class="text-muted small mt-1">
+                @Model.OrderDate.ToLocalTime().ToString("yyyy-MM-dd HH:mm") • @itemsCount item(s) •
+                <span class="font-orbitron text-primary">@Model.TotalAmount.ToString("0.##") JOD</span>
+            </div>
+        </div>
+        <div class="d-flex gap-2">
+            <a class="btn btn-outline-primary pb-btn-glow" asp-controller="Admin" asp-action="Orders">Back</a>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-12 col-lg-8">
+            <div class="pb-surface pb-card p-3 p-md-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2 class="h5 font-orbitron mb-0">Items</h2>
+                    <span class="text-muted small">User: @((string.IsNullOrWhiteSpace(Model.UserId) ? "Guest" : Model.UserId))</span>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-dark table-borderless align-middle mb-0" style="--bs-table-bg: transparent;">
+                        <thead style="color: rgba(255,255,255,0.75);">
+                        <tr>
+                            <th>Product</th>
+                            <th class="text-end">Qty</th>
+                            <th class="text-end">Unit</th>
+                            <th class="text-end">Line total</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in (Model.Items ?? new List<PixelAndBit.Domain.Entities.OrderItem>()).OrderBy(i => i.ProductId))
+                        {
+                            <tr style="border-top: 1px solid rgba(157,78,221,0.14);">
+                                <td>
+                                    <div class="font-orbitron" style="color: rgba(255,255,255,0.92);">
+                                        @(item.Product?.Name ?? $"Product #{item.ProductId}")
+                                    </div>
+                                    <div class="text-muted small">ID: @item.ProductId</div>
+                                </td>
+                                <td class="text-end">@item.Quantity</td>
+                                <td class="text-end">@item.UnitPrice.ToString("0.##")</td>
+                                <td class="text-end font-orbitron text-primary">@((item.UnitPrice * item.Quantity).ToString("0.##"))</td>
+                            </tr>
+                        }
+                        </tbody>
+                        <tfoot>
+                        <tr style="border-top: 1px solid rgba(157,78,221,0.22);">
+                            <td colspan="3" class="text-end text-muted">Total</td>
+                            <td class="text-end font-orbitron text-primary">@Model.TotalAmount.ToString("0.##") JOD</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-4">
+            <div class="pb-surface pb-card p-3 p-md-4">
+                <h2 class="h5 font-orbitron mb-3">Status</h2>
+
+                @{
+                    var badgeStyle = Model.Status switch
+                    {
+                        OrderStatus.Completed => "background: rgba(46,243,210,0.14); border: 1px solid rgba(46,243,210,0.40); color: rgba(46,243,210,0.92);",
+                        OrderStatus.Cancelled => "background: rgba(255,80,120,0.12); border: 1px solid rgba(255,80,120,0.35); color: rgba(255,160,180,0.92);",
+                        _ => "background: rgba(157,78,221,0.14); border: 1px solid rgba(157,78,221,0.40); color: rgba(255,255,255,0.88);"
+                    };
+                }
+                <div class="mb-3">
+                    <span class="badge" style="@badgeStyle">@Model.Status</span>
+                </div>
+
+                <form asp-controller="Admin" asp-action="UpdateOrderStatus" method="post" class="d-grid gap-2">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="id" value="@Model.Id" />
+                    <select name="status" class="form-select pb-input">
+                        @foreach (var s in Enum.GetValues<OrderStatus>())
+                        {
+                            <option value="@s" selected="@(s == Model.Status)">@s</option>
+                        }
+                    </select>
+                    <button type="submit" class="btn btn-primary pb-btn-glow">Update status</button>
+                </form>
+
+                <div class="small text-muted mt-3">
+                    Tip: set to <span class="pb-highlight">Completed</span> to count toward sales revenue.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

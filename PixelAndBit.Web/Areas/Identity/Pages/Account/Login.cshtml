@@ -1,0 +1,71 @@
+@page
+@model PixelAndBit.Web.Areas.Identity.Pages.Account.LoginModel
+@{
+    ViewData["Title"] = "Sign in";
+    var toast    = TempData["pb_toast"]?.ToString();
+    var toastErr = TempData["pb_toast_error"]?.ToString();
+}
+
+<div class="pb-section pb-fade">
+    <div class="pb-auth-shell mx-auto">
+        <div class="text-center mb-4">
+            <h1 class="h2 font-orbitron mb-2">Sign in</h1>
+            <p class="text-muted mb-0">Welcome back. Access your bookings, orders, and account.</p>
+        </div>
+
+        <div class="pb-surface pb-card pb-auth-card p-4 p-md-5">
+            @if (!string.IsNullOrWhiteSpace(toastErr))
+            {
+                <div class="mb-3 p-3" style="background: rgba(255, 80, 120, 0.10); border: 1px solid rgba(255, 80, 120, 0.35); border-radius: 14px;">
+                    <div style="color: rgba(255,255,255,0.92);">@toastErr</div>
+                </div>
+            }
+            else if (!string.IsNullOrWhiteSpace(toast))
+            {
+                <div class="mb-3 p-3" style="background: rgba(100,233,255,0.10); border: 1px solid rgba(100,233,255,0.25); border-radius: 14px;">
+                    <div style="color: rgba(255,255,255,0.92);">@toast</div>
+                </div>
+            }
+
+            <form method="post" class="d-grid gap-3">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div>
+                    <label asp-for="Input.Email" class="form-label fw-semibold text-muted"></label>
+                    <input asp-for="Input.Email" class="form-control pb-input" autocomplete="username" inputmode="email" />
+                    <span asp-validation-for="Input.Email" class="text-danger small"></span>
+                </div>
+
+                <div>
+                    <label asp-for="Input.Password" class="form-label fw-semibold text-muted"></label>
+                    <input asp-for="Input.Password" class="form-control pb-input" autocomplete="current-password" />
+                    <span asp-validation-for="Input.Password" class="text-danger small"></span>
+                </div>
+
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+                    <div class="form-check m-0">
+                        <input asp-for="Input.RememberMe" class="form-check-input" />
+                        <label asp-for="Input.RememberMe" class="form-check-label text-muted"></label>
+                    </div>
+                    <a class="small text-muted pb-auth-link" asp-page="./ForgotPassword">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary pb-btn-glow pb-auth-btn">Login</button>
+
+                @if (Model.AllowPublicRegistration)
+                {
+                    <div class="pb-auth-divider" aria-hidden="true"><span>New here?</span></div>
+                    <a class="btn btn-outline-primary pb-btn-glow pb-auth-btn"
+                       asp-page="./Register"
+                       asp-route-returnUrl="@Model.ReturnUrl">
+                        Create account
+                    </a>
+                }
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

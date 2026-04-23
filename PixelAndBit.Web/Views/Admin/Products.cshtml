@@ -1,0 +1,62 @@
+@model List<PixelAndBit.Domain.Entities.Product>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<div class="pb-section pb-fade">
+    <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-4">
+        <div>
+            <div class="text-muted small text-uppercase">Admin</div>
+            <h1 class="h3 font-orbitron mb-0">Products</h1>
+        </div>
+        <div class="d-flex gap-2">
+            <a class="btn btn-outline-primary pb-btn-glow" asp-controller="Admin" asp-action="Index">Back</a>
+            <a class="btn btn-primary pb-btn-glow" asp-controller="Admin" asp-action="ProductCreate">Add product</a>
+        </div>
+    </div>
+
+    <div class="pb-surface pb-card p-3 p-md-4">
+        <div class="table-responsive">
+            <table class="table table-dark table-borderless align-middle mb-0" style="--bs-table-bg: transparent;">
+                <thead style="color: rgba(255,255,255,0.75);">
+                <tr>
+                    <th class="font-orbitron" style="letter-spacing:.08em;">Name</th>
+                    <th class="text-end">Price</th>
+                    <th class="text-end">Stock</th>
+                    <th class="text-end">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var p in Model)
+                {
+                    <tr style="border-top: 1px solid rgba(157,78,221,0.14);">
+                        <td>
+                            <div class="font-orbitron" style="color: rgba(255,255,255,0.92);">@p.Name</div>
+                            <div class="text-muted small">ID: @p.Id</div>
+                        </td>
+                        <td class="text-end font-orbitron text-primary">@p.Price.ToString("0.##") JOD</td>
+                        <td class="text-end">@p.StockQuantity</td>
+                        <td class="text-end">
+                            <div class="d-inline-flex gap-2">
+                                <a class="btn btn-sm btn-outline-primary pb-btn-glow"
+                                   asp-controller="Admin" asp-action="ProductEdit" asp-route-id="@p.Id">Edit</a>
+                                <form method="post" asp-controller="Admin" asp-action="ProductDelete" asp-route-id="@p.Id" class="d-inline">
+                                    @Html.AntiForgeryToken()
+                                    <button class="btn btn-sm btn-outline-primary pb-btn-glow"
+                                            style="border-color: rgba(255,80,120,0.45) !important; color: rgba(255,200,215,0.95) !important;"
+                                            type="submit"
+                                            onclick="return confirm('Delete this product?');">
+                                        Delete
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

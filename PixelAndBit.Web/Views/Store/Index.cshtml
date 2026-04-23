@@ -1,0 +1,100 @@
+@model IEnumerable<PixelAndBit.Domain.Entities.Product>
+@inject Microsoft.Extensions.Localization.IStringLocalizer<PixelAndBit.Web.SharedResource> T
+@using System.Globalization
+
+@{
+    ViewData["Title"] = T["Store.Title"];
+    var list = Model?.ToList() ?? new List<PixelAndBit.Domain.Entities.Product>();
+    var q = (ViewBag.Q as string) ?? "";
+    var isAr = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "ar";
+    var suffix = isAr ? "" : (list.Count == 1 ? "" : "s");
+}
+
+<div class="pb-section pb-fade">
+    <div class="pb-store-head d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+        <div class="pb-store-brand pb-fade" aria-label="@T["Store.Title"]">
+            <img class="pb-store-logo"
+                 src="~/pixelbit-nav-icon.png"
+                 asp-append-version="true"
+                 alt="Pixel&amp;Bit Store"
+                 loading="lazy"
+                 decoding="async" />
+        </div>
+        <span class="badge pb-store-count">
+            @T["Store.ItemsCount", list.Count, suffix]
+        </span>
+    </div>
+
+    <form method="get" class="pb-surface pb-card p-3 mb-4 pb-fade pb-store-search" style="backdrop-filter: blur(15px);">
+        <div class="d-flex flex-column flex-md-row gap-2 align-items-stretch">
+            <input name="q" value="@q" class="form-control pb-input" placeholder="@T["Store.SearchPlaceholder"]" />
+            <button class="btn btn-primary pb-btn-glow pb-store-btn" type="submit">@T["Store.Search"]</button>
+            @if (!string.IsNullOrWhiteSpace(q))
+            {
+                <a class="btn btn-outline-primary pb-btn-glow pb-store-btn" asp-controller="Store" asp-action="Index">@T["Store.Clear"]</a>
+            }
+        </div>
+    </form>
+
+    @if (list.Count == 0)
+    {
+        <div class="pb-surface p-4">
+            <div class="font-orbitron mb-2 text-primary">@T["Store.NoInventoryTitle"]</div>
+            <div style="color: rgba(237,237,237,0.7);">@T["Store.NoInventoryBody"]</div>
+        </div>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+            @foreach (var product in list)
+            {
+                <div class="col">
+                    <div class="pb-surface pb-card h-100 p-4 pb-fade pb-store-card">
+                        @{
+                            var hasImg = !string.IsNullOrWhiteSpace(product.ImageUrl);
+                            var imgSrc = hasImg ? product.ImageUrl : Url.Content("~/pixelbit-nav-icon.png");
+                        }
+
+                        <div class="w-100 rounded-4 overflow-hidden" style="height: 224px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+                            <img src="@imgSrc"
+                                 alt="@product.Name"
+                                 class="w-100 h-100"
+                                 loading="lazy"
+                                 decoding="async"
+                                 style="object-fit: cover; object-position: center; transform: scale(1); transition: transform 300ms ease;"
+                                 onmouseover="this.style.transform='scale(1.05)'"
+                                 onmouseout="this.style.transform='scale(1)'" />
+                        </div>
+
+                        <div class="d-flex align-items-start justify-content-between gap-3">
+                            <div class="pb-title" style="color: var(--text-white); font-size: 1.05rem;">
+                                @product.Name
+                            </div>
+                            <div class="text-end" style="white-space: nowrap;">
+                                <div class="pb-title" style="color: var(--brand-purple); font-size: 1.1rem;">
+                                    @product.Price.ToString("0.##") JOD
+                                </div>
+                                <div style="color: rgba(237,237,237,0.55); font-size: 0.85rem;">
+                                    Stock: @product.StockQuantity
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-3 pb-store-desc" style="color: rgba(237,237,237,0.75); line-height: 1.5;">
+                            @product.Description
+                        </div>
+
+                        <div class="mt-3 pt-3 pb-store-actions" style="border-top: 1px solid rgba(157,78,221,0.18);">
+                            <button type="button"
+                                    class="btn btn-primary w-100 pb-btn-glow"
+                                    data-add-to-cart="1"
+                                    data-product-id="@product.Id">
+                                @T["Store.AddToCart"]
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

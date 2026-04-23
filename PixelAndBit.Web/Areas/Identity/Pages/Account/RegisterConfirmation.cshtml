@@ -1,0 +1,26 @@
+@page
+@model PixelAndBit.Web.Areas.Identity.Pages.Account.RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Confirm your email";
+    var email = TempData["pb_confirm_email"]?.ToString();
+}
+
+<div class="pb-section pb-fade">
+    <div class="mx-auto" style="max-width: 42rem;">
+        <h1 class="h2 font-orbitron mb-3">Confirm your email</h1>
+        <p class="text-muted mb-4">
+            Email confirmation now uses a <span class="pb-highlight">5-digit code</span>. Please go to the verification screen.
+        </p>
+
+        <div class="pb-surface pb-card p-4 p-md-5 pb-fade" style="backdrop-filter: blur(15px);">
+            <a class="btn btn-primary pb-btn-glow w-100 mb-3" href="~/Identity/Account/VerifyEmail?email=@Uri.EscapeDataString(email ?? "")">
+                Enter verification code
+            </a>
+
+            <div class="mt-4 text-center">
+                <a class="small" asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Back to login</a>
+            </div>
+        </div>
+    </div>
+</div>
+

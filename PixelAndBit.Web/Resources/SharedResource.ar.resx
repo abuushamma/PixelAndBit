@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- Navbar -->
+  <data name="Nav.SkipToContent" xml:space="preserve"><value>تخطي إلى المحتوى</value></data>
+  <data name="Nav.Toggle" xml:space="preserve"><value>فتح/إغلاق القائمة</value></data>
+  <data name="Nav.Home" xml:space="preserve"><value>الرئيسية</value></data>
+  <data name="Nav.BrandHome" xml:space="preserve"><value>Pixel&amp;Bit — الرئيسية</value></data>
+  <data name="Nav.Store" xml:space="preserve"><value>المتجر</value></data>
+  <data name="Nav.Booking" xml:space="preserve"><value>الحجز</value></data>
+  <data name="Nav.Track" xml:space="preserve"><value>التتبع</value></data>
+  <data name="Nav.Contact" xml:space="preserve"><value>تواصل معنا</value></data>
+  <data name="Nav.Admin" xml:space="preserve"><value>الإدارة</value></data>
+  <data name="Nav.Profile" xml:space="preserve"><value>حسابي</value></data>
+  <data name="Nav.Logout" xml:space="preserve"><value>تسجيل الخروج</value></data>
+  <data name="Nav.SignIn" xml:space="preserve"><value>تسجيل الدخول</value></data>
+  <data name="Nav.BookRepair" xml:space="preserve"><value>احجز صيانة</value></data>
+  <data name="Nav.Cart" xml:space="preserve"><value>السلة</value></data>
+  <data name="Nav.CartItemsAria" xml:space="preserve"><value>{0} عنصر في السلة</value></data>
+  <data name="Nav.Language.EN" xml:space="preserve"><value>EN</value></data>
+  <data name="Nav.Language.AR" xml:space="preserve"><value>AR</value></data>
+  <data name="Nav.Language.Label" xml:space="preserve"><value>اللغة</value></data>
+  <data name="Nav.BrandName" xml:space="preserve"><value>Pixel &amp; Bit</value></data>
+  <data name="Nav.BrandTagline" xml:space="preserve"><value>صيانة باحتراف</value></data>
+  <data name="Nav.BrandLogoAlt" xml:space="preserve"><value>شعار Pixel &amp; Bit</value></data>
+
+  <!-- Footer -->
+  <data name="Footer.Location" xml:space="preserve"><value>طبربور، دوّار الدبابة</value></data>
+
+  <!-- Home -->
+  <data name="Home.Title" xml:space="preserve"><value>الرئيسية</value></data>
+  <data name="Home.Hero.Kicker" xml:space="preserve"><value>صيانة أجهزة بريميوم • طبربور</value></data>
+  <data name="Home.Hero.Title" xml:space="preserve"><value>وجهتك التقنية الشاملة.</value></data>
+  <data name="Home.Hero.Sub" xml:space="preserve"><value>احجز خلال دقائق، وتابع الحالة فورًا، واستلم جهازك نظيفًا ومجرّبًا ومضبوط الأداء. تجربة بريميوم من أول خطوة لآخر تسليم.</value></data>
+  <data name="Home.CTA.Book" xml:space="preserve"><value>احجز صيانة</value></data>
+  <data name="Home.CTA.Track" xml:space="preserve"><value>تتبع الطلب</value></data>
+  <data name="Home.CTA.ViewWork" xml:space="preserve"><value>شاهد أعمالنا ←</value></data>
+
+  <!-- Hero -->
+  <data name="Hero.Stats.Aria" xml:space="preserve"><value>إحصائيات سريعة</value></data>
+  <data name="Hero.Stat1.Top" xml:space="preserve"><value>بنفس اليوم</value></data>
+  <data name="Hero.Stat1.Sub" xml:space="preserve"><value>تشخيص في أغلب الحالات</value></data>
+  <data name="Hero.Stat2.Top" xml:space="preserve"><value>ضمان</value></data>
+  <data name="Hero.Stat2.Sub" xml:space="preserve"><value>على الصيانة المكتملة</value></data>
+  <data name="Hero.Stat3.Top" xml:space="preserve"><value>دعم سريع</value></data>
+  <data name="Hero.Stat3.Sub" xml:space="preserve"><value>جاهز على واتساب</value></data>
+  <data name="Hero.Visual.Aria" xml:space="preserve"><value>معاينة الحجز والتتبع</value></data>
+  <data name="Hero.Visual.Title" xml:space="preserve"><value>الحجز والتتبع</value></data>
+  <data name="Hero.Visual.Card1.Title" xml:space="preserve"><value>احجز صيانة</value></data>
+  <data name="Hero.Visual.Card1.Pill1" xml:space="preserve"><value>الجهاز</value></data>
+  <data name="Hero.Visual.Card1.Pill2" xml:space="preserve"><value>المشكلة</value></data>
+  <data name="Hero.Visual.Card1.Pill3" xml:space="preserve"><value>تأكيد</value></data>
+  <data name="Hero.Visual.Card2.Title" xml:space="preserve"><value>تتبع الطلب</value></data>
+
+  <!-- Buttons -->
+  <data name="Buttons.Book" xml:space="preserve"><value>احجز</value></data>
+  <data name="Buttons.BookRepair" xml:space="preserve"><value>احجز صيانة ←</value></data>
+  <data name="Buttons.TrackTicket" xml:space="preserve"><value>تتبع الطلب ←</value></data>
+  <data name="Buttons.BrowseStore" xml:space="preserve"><value>تصفح المتجر ←</value></data>
+
+  <!-- Benefits -->
+  <data name="Benefits.Card1.Title" xml:space="preserve"><value>تشخيص دقيق</value></data>
+  <data name="Benefits.Card1.Sub" xml:space="preserve"><value>فحص كامل لتحديد السبب بدقة قبل بدء أي صيانة.</value></data>
+  <data name="Benefits.Card2.Title" xml:space="preserve"><value>صيانة عالية الجودة</value></data>
+  <data name="Benefits.Card2.Sub" xml:space="preserve"><value>إصلاحات موثوقة للهواتف والأجهزة المحمولة وأجهزة الألعاب.</value></data>
+  <data name="Benefits.Card3.Title" xml:space="preserve"><value>خدمة سريعة</value></data>
+  <data name="Benefits.Card3.Sub" xml:space="preserve"><value>عملية صيانة فعّالة لإعادة جهازك في أسرع وقت ممكن.</value></data>
+
+  <!-- Value -->
+  <data name="Value.Eyebrow" xml:space="preserve"><value>القيمة</value></data>
+  <data name="Value.Title" xml:space="preserve"><value>تجربة بريميوم من البداية للنهاية</value></data>
+  <data name="Value.Subtitle" xml:space="preserve"><value>واجهة نظيفة وخطوات واضحة ونتائج متوقعة—مصممة للسرعة والثقة.</value></data>
+  <data name="Value.Card1.Title" xml:space="preserve"><value>حجز سريع</value></data>
+  <data name="Value.Card1.Sub" xml:space="preserve"><value>احجز خلال دقائق بخطوات بسيطة وتفاصيل واضحة.</value></data>
+  <data name="Value.Card2.Title" xml:space="preserve"><value>عملية واضحة</value></data>
+  <data name="Value.Card2.Sub" xml:space="preserve"><value>تشخيص أولاً ثم الإصلاح—بدون لخبطة أو مفاجآت.</value></data>
+  <data name="Value.Card3.Title" xml:space="preserve"><value>تتبع في أي وقت</value></data>
+  <data name="Value.Card3.Sub" xml:space="preserve"><value>تابع حالة جهازك بدون مكالمات أو انتظار.</value></data>
+
+  <!-- Features -->
+  <data name="Features.Eyebrow" xml:space="preserve"><value>المزايا</value></data>
+  <data name="Features.Title" xml:space="preserve"><value>مصمم للثقة والعملاء الدائمين</value></data>
+  <data name="Features.Card1.Title" xml:space="preserve"><value>جودة صيانة تلاحظها</value></data>
+  <data name="Features.Card1.Subtitle" xml:space="preserve"><value>تنظيف داخلي، تحسين التبريد، وتشطيب احترافي — مع فحص شامل بعد الصيانة</value></data>
+  <data name="Features.Card1.Tag1" xml:space="preserve"><value>تنظيف داخلي</value></data>
+  <data name="Features.Card1.Tag2" xml:space="preserve"><value>تغيير المعجون الحراري</value></data>
+  <data name="Features.Card1.Tag3" xml:space="preserve"><value>فحص الأعطال</value></data>
+  <data name="Features.Card1.Tag4" xml:space="preserve"><value>تحسين التبريد</value></data>
+  <data name="Features.Card2.Title" xml:space="preserve"><value>المتجر + الخدمة بمكان واحد</value></data>
+  <data name="Features.Card2.Subtitle" xml:space="preserve"><value>قطع وإكسسوارات مختارة للموثوقية والأداء.</value></data>
+
+  <!-- Services -->
+  <data name="Services.Eyebrow" xml:space="preserve"><value>الخدمات</value></data>
+  <data name="Services.Title" xml:space="preserve"><value>كل ما تحتاجه في مكان واحد</value></data>
+  <data name="Services.Subtitle" xml:space="preserve"><value>صيانة بريميوم وقطع مختارة وتجميعات بأداء عالي.</value></data>
+  <data name="Services.Card1.Title" xml:space="preserve"><value>صيانة</value></data>
+  <data name="Services.Card1.Subtitle" xml:space="preserve"><value>تشخيص وتنظيف وخدمة حرارية ومنافذ وفحص الاستقرار.</value></data>
+  <data name="Services.Card2.Title" xml:space="preserve"><value>المتجر</value></data>
+  <data name="Services.Card2.Subtitle" xml:space="preserve"><value>قطع وإكسسوارات مختارة للموثوقية والأداء.</value></data>
+  <data name="Services.Card3.Title" xml:space="preserve"><value>التتبع</value></data>
+  <data name="Services.Card3.Subtitle" xml:space="preserve"><value>تابع الحالة بأي وقت—بدون مكالمات أو انتظار.</value></data>
+
+  <!-- Pricing -->
+  <data name="Pricing.Eyebrow" xml:space="preserve"><value>الأسعار</value></data>
+  <data name="Pricing.Title" xml:space="preserve"><value>واضح، بسيط، ويمكن التنبؤ به</value></data>
+  <data name="Pricing.Subtitle" xml:space="preserve"><value>حالياً بشكل مبدئي—بالنسخة القادمة بنطابقها مع خدماتك وأسعارك الفعلية.</value></data>
+  <data name="Pricing.From" xml:space="preserve"><value>ابتداءً من</value></data>
+  <data name="Pricing.Basic.Title" xml:space="preserve"><value>أساسي</value></data>
+  <data name="Pricing.Basic.Subtitle" xml:space="preserve"><value>إصلاحات سريعة وخدمة قياسية.</value></data>
+  <data name="Pricing.Standard.Badge" xml:space="preserve"><value>الأكثر طلباً</value></data>
+  <data name="Pricing.Standard.Title" xml:space="preserve"><value>قياسي</value></data>
+  <data name="Pricing.Standard.Subtitle" xml:space="preserve"><value>تشخيص + إصلاح + تحقق.</value></data>
+  <data name="Pricing.Premium.Title" xml:space="preserve"><value>بريميوم</value></data>
+  <data name="Pricing.Premium.Subtitle" xml:space="preserve"><value>خدمة حرارية وتنظيف عميق وضبط أداء.</value></data>
+
+  <!-- Action section (conversion) -->
+  <data name="Action.Title" xml:space="preserve"><value>ابدأ الآن بسهولة</value></data>
+  <data name="Action.Subtitle" xml:space="preserve"><value>اختر ما تريد وابدأ خلال ثواني</value></data>
+  <data name="Action.Booking.Title" xml:space="preserve"><value>احجز صيانة</value></data>
+  <data name="Action.Booking.Subtitle" xml:space="preserve"><value>ابدأ إصلاح جهازك بسرعة وسهولة</value></data>
+  <data name="Action.Booking.Button" xml:space="preserve"><value>احجز الآن</value></data>
+  <data name="Action.Tracking.Title" xml:space="preserve"><value>تتبع طلبك</value></data>
+  <data name="Action.Tracking.Subtitle" xml:space="preserve"><value>تابع حالة جهازك خطوة بخطوة</value></data>
+  <data name="Action.Tracking.Button" xml:space="preserve"><value>تتبع الطلب</value></data>
+  <data name="Action.Contact.Title" xml:space="preserve"><value>تواصل معنا</value></data>
+  <data name="Action.Contact.Subtitle" xml:space="preserve"><value>عندك استفسار؟ تواصل معنا مباشرة</value></data>
+  <data name="Action.Contact.Button" xml:space="preserve"><value>واتساب</value></data>
+
+  <!-- CTA -->
+  <data name="CTA.Eyebrow" xml:space="preserve"><value>جاهز نبدأ؟</value></data>
+  <data name="CTA.Title" xml:space="preserve"><value>احجز صيانة خلال دقائق</value></data>
+  <data name="CTA.Subtitle" xml:space="preserve"><value>خطوات واضحة وتشطيب بريميوم وتتبع تقدر تثق فيه.</value></data>
+
+  <!-- Visit us (final push) -->
+  <data name="Visit.Title" xml:space="preserve"><value>خلّيها علينا</value></data>
+  <data name="Visit.Description" xml:space="preserve"><value>جيب جهازك وإحنا بنتكفّل بالفحص والتشخيص والإصلاح بأعلى جودة</value></data>
+  <data name="Visit.Button" xml:space="preserve"><value>زورنا اليوم</value></data>
+  <data name="Visit.ButtonAria" xml:space="preserve"><value>افتح الموقع على خرائط Google</value></data>
+
+  <!-- Work / Proof -->
+  <data name="Work.Eyebrow" xml:space="preserve"><value>أعمالنا</value></data>
+  <data name="Work.Title" xml:space="preserve"><value>شغل تقدر تثق فيه</value></data>
+  <data name="Work.Subtitle" xml:space="preserve"><value>صيانة حقيقية وتجميعات فعلية وتشطيب نظيف—تابعنا على إنستغرام وشوف التفاصيل.</value></data>
+  <data name="Work.ViewInstagram" xml:space="preserve"><value>عرض إنستغرام ←</value></data>
+  <data name="Work.OpenInstagramAria" xml:space="preserve"><value>فتح إنستغرام</value></data>
+  <data name="Work.Card1.Chip" xml:space="preserve"><value>صيانة</value></data>
+  <data name="Work.Card1.Title" xml:space="preserve"><value>تنظيف داخلي احترافي</value></data>
+  <data name="Work.Card1.Sub" xml:space="preserve"><value>إزالة غبار • خدمة حرارية • فحص الاستقرار</value></data>
+  <data name="Work.Card2.Chip" xml:space="preserve"><value>تجميعات</value></data>
+  <data name="Work.Card2.Title" xml:space="preserve"><value>تجميعات أداء</value></data>
+  <data name="Work.Card2.Sub" xml:space="preserve"><value>ضبط تدفق الهواء • ترتيب الكوابل</value></data>
+  <data name="Work.Card3.Chip" xml:space="preserve"><value>تشخيص</value></data>
+  <data name="Work.Card3.Title" xml:space="preserve"><value>نتائج واضحة</value></data>
+  <data name="Work.Card3.Sub" xml:space="preserve"><value>منافذ • طاقة • تحقق الأداء</value></data>
+
+  <!-- Store -->
+  <data name="Store.Title" xml:space="preserve"><value>المتجر</value></data>
+  <data name="Store.SearchPlaceholder" xml:space="preserve"><value>ابحث عن منتج بالاسم…</value></data>
+  <data name="Store.Search" xml:space="preserve"><value>بحث</value></data>
+  <data name="Store.Clear" xml:space="preserve"><value>مسح</value></data>
+  <data name="Store.ItemsCount" xml:space="preserve"><value>{0} عنصر{1}</value></data>
+  <data name="Store.NoInventoryTitle" xml:space="preserve"><value>لا توجد منتجات</value></data>
+  <data name="Store.NoInventoryBody" xml:space="preserve"><value>شغّل عمليات التهيئة (migrations) ثم أعد تشغيل الموقع لتطبيق بيانات البداية.</value></data>
+  <data name="Store.AddToCart" xml:space="preserve"><value>أضف إلى السلة</value></data>
+
+  <!-- Booking -->
+  <data name="Booking.Title" xml:space="preserve"><value>حجز الصيانة</value></data>
+  <data name="Booking.Subtitle" xml:space="preserve"><value>قدّم طلب صيانة واحصل على تذكرة رقمية فورًا.</value></data>
+  <data name="Booking.CustomerName" xml:space="preserve"><value>اسم العميل</value></data>
+  <data name="Booking.CustomerName.Placeholder" xml:space="preserve"><value>الاسم الكامل</value></data>
+  <data name="Booking.PhoneNumber" xml:space="preserve"><value>رقم الهاتف</value></data>
+  <data name="Booking.PhoneNumber.Placeholder" xml:space="preserve"><value>07XXXXXXXX</value></data>
+  <data name="Booking.DeviceType" xml:space="preserve"><value>نوع الجهاز</value></data>
+  <data name="Booking.DeviceType.Help" xml:space="preserve"><value>اختر نوع الجهاز لمساعدتنا على تقييم الطلب بسرعة.</value></data>
+  <data name="Booking.Device.Phone" xml:space="preserve"><value>هاتف</value></data>
+  <data name="Booking.Device.Laptop" xml:space="preserve"><value>لابتوب</value></data>
+  <data name="Booking.Device.Console" xml:space="preserve"><value>كونسول</value></data>
+  <data name="Booking.DeviceModel" xml:space="preserve"><value>موديل الجهاز</value></data>
+  <data name="Booking.DeviceModel.Placeholder" xml:space="preserve"><value>مثل: iPhone 13 Pro / PS5 / Lenovo Legion 5</value></data>
+  <data name="Booking.IssueDescription" xml:space="preserve"><value>وصف المشكلة</value></data>
+  <data name="Booking.IssueDescription.Placeholder" xml:space="preserve"><value>اشرح المشكلة بالتفصيل (الأعراض، متى بدأت، أي أخطاء ظهرت)</value></data>
+  <data name="Booking.Confirm" xml:space="preserve"><value>تأكيد طلب الصيانة</value></data>
+
+  <!-- Track -->
+  <data name="Track.Title" xml:space="preserve"><value>تتبع الصيانة</value></data>
+  <data name="Track.Subtitle" xml:space="preserve"><value>أدخل رقم التذكرة لعرض آخر تحديث لحالة جهازك.</value></data>
+  <data name="Track.TicketReference" xml:space="preserve"><value>رقم التذكرة</value></data>
+  <data name="Track.Placeholder" xml:space="preserve"><value>PB-2026-XXXX</value></data>
+  <data name="Track.Button" xml:space="preserve"><value>تتبع</value></data>
+
+  <!-- Contact -->
+  <data name="Contact.Title" xml:space="preserve"><value>تواصل معنا</value></data>
+  <data name="Contact.Header" xml:space="preserve"><value>تواصل مع Pixel&amp;Bit</value></data>
+  <data name="Contact.Subtitle" xml:space="preserve"><value>طبربور، دوّار الدبابة • 0785291744</value></data>
+  <data name="Contact.WhatsAppSupport" xml:space="preserve"><value>دعم واتساب</value></data>
+  <data name="Contact.ChatWhatsApp" xml:space="preserve"><value>محادثة واتساب</value></data>
+  <data name="Contact.OpenMaps" xml:space="preserve"><value>افتح على خرائط Google</value></data>
+  <data name="Contact.StoreLabel" xml:space="preserve"><value>المتجر</value></data>
+  <data name="Contact.PhoneLabel" xml:space="preserve"><value>الهاتف</value></data>
+
+  <!-- Validation -->
+  <data name="Validation.Required" xml:space="preserve"><value>هذا الحقل مطلوب.</value></data>
+  <data name="Validation.MinLength" xml:space="preserve"><value>الحد الأدنى {1} أحرف.</value></data>
+  <data name="Validation.MaxLength" xml:space="preserve"><value>الحد الأقصى {1} حرفًا.</value></data>
+  <data name="Validation.PhoneJordan" xml:space="preserve"><value>استخدم صيغة الأردن: 07XXXXXXXX</value></data>
+  <data name="Validation.TicketFormat" xml:space="preserve"><value>الصيغة: PB-2026-XXXX</value></data>
+</root>
+

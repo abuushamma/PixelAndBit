@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- Navbar -->
+  <data name="Nav.SkipToContent" xml:space="preserve"><value>Skip to content</value></data>
+  <data name="Nav.Toggle" xml:space="preserve"><value>Toggle navigation</value></data>
+  <data name="Nav.Home" xml:space="preserve"><value>Home</value></data>
+  <data name="Nav.BrandHome" xml:space="preserve"><value>Pixel&amp;Bit — Home</value></data>
+  <data name="Nav.Store" xml:space="preserve"><value>Store</value></data>
+  <data name="Nav.Booking" xml:space="preserve"><value>Booking</value></data>
+  <data name="Nav.Track" xml:space="preserve"><value>Track</value></data>
+  <data name="Nav.Contact" xml:space="preserve"><value>Contact</value></data>
+  <data name="Nav.Admin" xml:space="preserve"><value>Admin</value></data>
+  <data name="Nav.Profile" xml:space="preserve"><value>Profile</value></data>
+  <data name="Nav.Logout" xml:space="preserve"><value>Logout</value></data>
+  <data name="Nav.SignIn" xml:space="preserve"><value>Sign in</value></data>
+  <data name="Nav.BookRepair" xml:space="preserve"><value>Book repair</value></data>
+  <data name="Nav.Cart" xml:space="preserve"><value>Cart</value></data>
+  <data name="Nav.CartItemsAria" xml:space="preserve"><value>{0} items in cart</value></data>
+  <data name="Nav.Language.EN" xml:space="preserve"><value>EN</value></data>
+  <data name="Nav.Language.AR" xml:space="preserve"><value>AR</value></data>
+  <data name="Nav.Language.Label" xml:space="preserve"><value>Language</value></data>
+  <data name="Nav.BrandName" xml:space="preserve"><value>Pixel &amp; Bit</value></data>
+  <data name="Nav.BrandTagline" xml:space="preserve"><value>Professional repair</value></data>
+  <data name="Nav.BrandLogoAlt" xml:space="preserve"><value>Pixel &amp; Bit logo</value></data>
+
+  <!-- Footer -->
+  <data name="Footer.Location" xml:space="preserve"><value>Tabarbour, Ad-Dabbabah Circle</value></data>
+
+  <!-- Home -->
+  <data name="Home.Title" xml:space="preserve"><value>Home</value></data>
+  <data name="Home.Hero.Kicker" xml:space="preserve"><value>Premium device repairs • Tabarbour</value></data>
+  <data name="Home.Hero.Title" xml:space="preserve"><value>Your one-stop tech destination.</value></data>
+  <data name="Home.Hero.Sub" xml:space="preserve"><value>Book in minutes, track progress instantly, and pick up a device that’s clean, tested, and performance-tuned. A premium experience from first click to final handoff.</value></data>
+  <data name="Home.CTA.Book" xml:space="preserve"><value>Book a repair</value></data>
+  <data name="Home.CTA.Track" xml:space="preserve"><value>Track ticket</value></data>
+  <data name="Home.CTA.ViewWork" xml:space="preserve"><value>View work →</value></data>
+
+  <!-- Hero -->
+  <data name="Hero.Stats.Aria" xml:space="preserve"><value>Quick stats</value></data>
+  <data name="Hero.Stat1.Top" xml:space="preserve"><value>Same-day</value></data>
+  <data name="Hero.Stat1.Sub" xml:space="preserve"><value>Diagnostics in most cases</value></data>
+  <data name="Hero.Stat2.Top" xml:space="preserve"><value>Warranty</value></data>
+  <data name="Hero.Stat2.Sub" xml:space="preserve"><value>On completed repairs</value></data>
+  <data name="Hero.Stat3.Top" xml:space="preserve"><value>Fast support</value></data>
+  <data name="Hero.Stat3.Sub" xml:space="preserve"><value>WhatsApp ready</value></data>
+  <data name="Hero.Visual.Aria" xml:space="preserve"><value>Booking and tracking preview</value></data>
+  <data name="Hero.Visual.Title" xml:space="preserve"><value>Booking &amp; Tracking</value></data>
+  <data name="Hero.Visual.Card1.Title" xml:space="preserve"><value>Book a repair</value></data>
+  <data name="Hero.Visual.Card1.Pill1" xml:space="preserve"><value>Device</value></data>
+  <data name="Hero.Visual.Card1.Pill2" xml:space="preserve"><value>Issue</value></data>
+  <data name="Hero.Visual.Card1.Pill3" xml:space="preserve"><value>Confirm</value></data>
+  <data name="Hero.Visual.Card2.Title" xml:space="preserve"><value>Track ticket</value></data>
+
+  <!-- Buttons -->
+  <data name="Buttons.Book" xml:space="preserve"><value>Book</value></data>
+  <data name="Buttons.BookRepair" xml:space="preserve"><value>Book repair →</value></data>
+  <data name="Buttons.TrackTicket" xml:space="preserve"><value>Track ticket →</value></data>
+  <data name="Buttons.BrowseStore" xml:space="preserve"><value>Browse store →</value></data>
+
+  <!-- Benefits -->
+  <data name="Benefits.Card1.Title" xml:space="preserve"><value>Precise Diagnosis</value></data>
+  <data name="Benefits.Card1.Sub" xml:space="preserve"><value>Full inspection to find the exact cause before starting any repair.</value></data>
+  <data name="Benefits.Card2.Title" xml:space="preserve"><value>Quality Repair</value></data>
+  <data name="Benefits.Card2.Sub" xml:space="preserve"><value>Reliable fixes for phones, laptops, and gaming devices.</value></data>
+  <data name="Benefits.Card3.Title" xml:space="preserve"><value>Quick Service</value></data>
+  <data name="Benefits.Card3.Sub" xml:space="preserve"><value>Efficient repair process to get your device back as soon as possible.</value></data>
+
+  <!-- Value -->
+  <data name="Value.Eyebrow" xml:space="preserve"><value>Value</value></data>
+  <data name="Value.Title" xml:space="preserve"><value>A premium experience end-to-end</value></data>
+  <data name="Value.Subtitle" xml:space="preserve"><value>Clean UI, clear steps, and predictable outcomes—optimized for speed and trust.</value></data>
+  <data name="Value.Card1.Title" xml:space="preserve"><value>Fast booking</value></data>
+  <data name="Value.Card1.Sub" xml:space="preserve"><value>Book in minutes with a streamlined flow and clear next steps.</value></data>
+  <data name="Value.Card2.Title" xml:space="preserve"><value>Transparent process</value></data>
+  <data name="Value.Card2.Sub" xml:space="preserve"><value>Diagnostics first, then the fix—no confusion, no surprises.</value></data>
+  <data name="Value.Card3.Title" xml:space="preserve"><value>Track anytime</value></data>
+  <data name="Value.Card3.Sub" xml:space="preserve"><value>Customers can follow progress without calling or waiting.</value></data>
+
+  <!-- Features -->
+  <data name="Features.Eyebrow" xml:space="preserve"><value>Features</value></data>
+  <data name="Features.Title" xml:space="preserve"><value>Built for trust and repeat customers</value></data>
+  <data name="Features.Card1.Title" xml:space="preserve"><value>Repair quality you can feel</value></data>
+  <data name="Features.Card1.Subtitle" xml:space="preserve"><value>Internal cleaning, improved cooling, and a clean finish — with full post-repair inspection</value></data>
+  <data name="Features.Card1.Tag1" xml:space="preserve"><value>Internal Cleaning</value></data>
+  <data name="Features.Card1.Tag2" xml:space="preserve"><value>Thermal Paste Replacement</value></data>
+  <data name="Features.Card1.Tag3" xml:space="preserve"><value>Fault Diagnosis</value></data>
+  <data name="Features.Card1.Tag4" xml:space="preserve"><value>Cooling Optimization</value></data>
+  <data name="Features.Card2.Title" xml:space="preserve"><value>Store + service in one place</value></data>
+  <data name="Features.Card2.Subtitle" xml:space="preserve"><value>Parts and accessories curated for reliability and performance.</value></data>
+
+  <!-- Services -->
+  <data name="Services.Eyebrow" xml:space="preserve"><value>Services</value></data>
+  <data name="Services.Title" xml:space="preserve"><value>Everything you need, in one place</value></data>
+  <data name="Services.Subtitle" xml:space="preserve"><value>Premium repairs, curated parts, and performance-minded builds.</value></data>
+  <data name="Services.Card1.Title" xml:space="preserve"><value>Repair</value></data>
+  <data name="Services.Card1.Subtitle" xml:space="preserve"><value>Diagnostics, cleaning, thermal service, ports, and stability checks.</value></data>
+  <data name="Services.Card2.Title" xml:space="preserve"><value>Store</value></data>
+  <data name="Services.Card2.Subtitle" xml:space="preserve"><value>Curated parts and accessories—picked for reliability and performance.</value></data>
+  <data name="Services.Card3.Title" xml:space="preserve"><value>Tracking</value></data>
+  <data name="Services.Card3.Subtitle" xml:space="preserve"><value>Follow progress anytime—no calls, no waiting.</value></data>
+
+  <!-- Pricing -->
+  <data name="Pricing.Eyebrow" xml:space="preserve"><value>Pricing</value></data>
+  <data name="Pricing.Title" xml:space="preserve"><value>Clear, simple, predictable</value></data>
+  <data name="Pricing.Subtitle" xml:space="preserve"><value>We’ll keep this lightweight for now—next iteration we’ll match your real services/prices.</value></data>
+  <data name="Pricing.From" xml:space="preserve"><value>From</value></data>
+  <data name="Pricing.Basic.Title" xml:space="preserve"><value>Basic</value></data>
+  <data name="Pricing.Basic.Subtitle" xml:space="preserve"><value>Quick fixes &amp; standard service.</value></data>
+  <data name="Pricing.Standard.Badge" xml:space="preserve"><value>Most popular</value></data>
+  <data name="Pricing.Standard.Title" xml:space="preserve"><value>Standard</value></data>
+  <data name="Pricing.Standard.Subtitle" xml:space="preserve"><value>Diagnostics + repair + verification.</value></data>
+  <data name="Pricing.Premium.Title" xml:space="preserve"><value>Premium</value></data>
+  <data name="Pricing.Premium.Subtitle" xml:space="preserve"><value>Thermals, deep cleaning, and performance tuning.</value></data>
+
+  <!-- Action section (conversion) -->
+  <data name="Action.Title" xml:space="preserve"><value>Get Started Instantly</value></data>
+  <data name="Action.Subtitle" xml:space="preserve"><value>Choose what you need and start in seconds</value></data>
+  <data name="Action.Booking.Title" xml:space="preserve"><value>Book a Repair</value></data>
+  <data name="Action.Booking.Subtitle" xml:space="preserve"><value>Start fixing your device quickly and easily</value></data>
+  <data name="Action.Booking.Button" xml:space="preserve"><value>Book Now</value></data>
+  <data name="Action.Tracking.Title" xml:space="preserve"><value>Track Your Order</value></data>
+  <data name="Action.Tracking.Subtitle" xml:space="preserve"><value>Follow your device status step by step</value></data>
+  <data name="Action.Tracking.Button" xml:space="preserve"><value>Track Order</value></data>
+  <data name="Action.Contact.Title" xml:space="preserve"><value>Contact Us</value></data>
+  <data name="Action.Contact.Subtitle" xml:space="preserve"><value>Have a question? Reach out instantly</value></data>
+  <data name="Action.Contact.Button" xml:space="preserve"><value>Contact via WhatsApp</value></data>
+
+  <!-- CTA -->
+  <data name="CTA.Eyebrow" xml:space="preserve"><value>Ready to start?</value></data>
+  <data name="CTA.Title" xml:space="preserve"><value>Book your repair in minutes</value></data>
+  <data name="CTA.Subtitle" xml:space="preserve"><value>Clear steps, premium finishing, and tracking you can trust.</value></data>
+
+  <!-- Visit us (final push) -->
+  <data name="Visit.Title" xml:space="preserve"><value>Leave it to us</value></data>
+  <data name="Visit.Description" xml:space="preserve"><value>Bring your device and we’ll handle diagnosis and repair with top quality</value></data>
+  <data name="Visit.Button" xml:space="preserve"><value>Visit us today</value></data>
+  <data name="Visit.ButtonAria" xml:space="preserve"><value>Open location in Google Maps</value></data>
+
+  <!-- Work / Proof -->
+  <data name="Work.Eyebrow" xml:space="preserve"><value>Proof</value></data>
+  <data name="Work.Title" xml:space="preserve"><value>Work you can trust</value></data>
+  <data name="Work.Subtitle" xml:space="preserve"><value>Real repairs, real builds, and clean finishing—follow along on Instagram.</value></data>
+  <data name="Work.ViewInstagram" xml:space="preserve"><value>View Instagram →</value></data>
+  <data name="Work.OpenInstagramAria" xml:space="preserve"><value>Open Instagram</value></data>
+  <data name="Work.Card1.Chip" xml:space="preserve"><value>Repairs</value></data>
+  <data name="Work.Card1.Title" xml:space="preserve"><value>Clean internals</value></data>
+  <data name="Work.Card1.Sub" xml:space="preserve"><value>Dust removal • thermal • stability checks</value></data>
+  <data name="Work.Card2.Chip" xml:space="preserve"><value>Builds</value></data>
+  <data name="Work.Card2.Title" xml:space="preserve"><value>Performance builds</value></data>
+  <data name="Work.Card2.Sub" xml:space="preserve"><value>Airflow tuned • cable management</value></data>
+  <data name="Work.Card3.Chip" xml:space="preserve"><value>Diagnostics</value></data>
+  <data name="Work.Card3.Title" xml:space="preserve"><value>Clear results</value></data>
+  <data name="Work.Card3.Sub" xml:space="preserve"><value>Ports • power • performance verification</value></data>
+
+  <!-- Store -->
+  <data name="Store.Title" xml:space="preserve"><value>Store</value></data>
+  <data name="Store.SearchPlaceholder" xml:space="preserve"><value>Search products by name…</value></data>
+  <data name="Store.Search" xml:space="preserve"><value>Search</value></data>
+  <data name="Store.Clear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Store.ItemsCount" xml:space="preserve"><value>{0} item{1}</value></data>
+  <data name="Store.NoInventoryTitle" xml:space="preserve"><value>No inventory detected</value></data>
+  <data name="Store.NoInventoryBody" xml:space="preserve"><value>Run migrations and restart the app to apply seed data.</value></data>
+  <data name="Store.AddToCart" xml:space="preserve"><value>Add to Cart</value></data>
+
+  <!-- Booking -->
+  <data name="Booking.Title" xml:space="preserve"><value>Repair Booking</value></data>
+  <data name="Booking.Subtitle" xml:space="preserve"><value>Submit a repair request and get a digital ticket instantly.</value></data>
+  <data name="Booking.CustomerName" xml:space="preserve"><value>Customer name</value></data>
+  <data name="Booking.CustomerName.Placeholder" xml:space="preserve"><value>Full name</value></data>
+  <data name="Booking.PhoneNumber" xml:space="preserve"><value>Phone number</value></data>
+  <data name="Booking.PhoneNumber.Placeholder" xml:space="preserve"><value>07XXXXXXXX</value></data>
+  <data name="Booking.DeviceType" xml:space="preserve"><value>Device type</value></data>
+  <data name="Booking.DeviceType.Help" xml:space="preserve"><value>Select one to help us triage your request faster.</value></data>
+  <data name="Booking.Device.Phone" xml:space="preserve"><value>Phone</value></data>
+  <data name="Booking.Device.Laptop" xml:space="preserve"><value>Laptop</value></data>
+  <data name="Booking.Device.Console" xml:space="preserve"><value>Console</value></data>
+  <data name="Booking.DeviceModel" xml:space="preserve"><value>Device model</value></data>
+  <data name="Booking.DeviceModel.Placeholder" xml:space="preserve"><value>e.g. iPhone 13 Pro / PS5 / Lenovo Legion 5</value></data>
+  <data name="Booking.IssueDescription" xml:space="preserve"><value>Issue description</value></data>
+  <data name="Booking.IssueDescription.Placeholder" xml:space="preserve"><value>Describe the issue in detail (symptoms, when it started, any errors)</value></data>
+  <data name="Booking.Confirm" xml:space="preserve"><value>Confirm Repair Request</value></data>
+
+  <!-- Track -->
+  <data name="Track.Title" xml:space="preserve"><value>Track My Repair</value></data>
+  <data name="Track.Subtitle" xml:space="preserve"><value>Enter your ticket reference to view the latest status of your device.</value></data>
+  <data name="Track.TicketReference" xml:space="preserve"><value>Ticket reference</value></data>
+  <data name="Track.Placeholder" xml:space="preserve"><value>PB-2026-XXXX</value></data>
+  <data name="Track.Button" xml:space="preserve"><value>Track</value></data>
+
+  <!-- Contact -->
+  <data name="Contact.Title" xml:space="preserve"><value>Contact</value></data>
+  <data name="Contact.Header" xml:space="preserve"><value>Contact Pixel&amp;Bit</value></data>
+  <data name="Contact.Subtitle" xml:space="preserve"><value>Tabarbour, Ad-Dabbabah Circle • 0785291744</value></data>
+  <data name="Contact.WhatsAppSupport" xml:space="preserve"><value>WhatsApp Support</value></data>
+  <data name="Contact.ChatWhatsApp" xml:space="preserve"><value>Chat on WhatsApp</value></data>
+  <data name="Contact.OpenMaps" xml:space="preserve"><value>Open in Google Maps</value></data>
+  <data name="Contact.StoreLabel" xml:space="preserve"><value>Store</value></data>
+  <data name="Contact.PhoneLabel" xml:space="preserve"><value>Phone</value></data>
+
+  <!-- Validation -->
+  <data name="Validation.Required" xml:space="preserve"><value>This field is required.</value></data>
+  <data name="Validation.MinLength" xml:space="preserve"><value>Please enter at least {1} characters.</value></data>
+  <data name="Validation.MaxLength" xml:space="preserve"><value>Please enter no more than {1} characters.</value></data>
+  <data name="Validation.PhoneJordan" xml:space="preserve"><value>Use Jordanian format: 07XXXXXXXX</value></data>
+  <data name="Validation.TicketFormat" xml:space="preserve"><value>Format: PB-2026-XXXX</value></data>
+</root>
+

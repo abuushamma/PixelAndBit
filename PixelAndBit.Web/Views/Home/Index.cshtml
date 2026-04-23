@@ -1,0 +1,353 @@
+@inject Microsoft.Extensions.Localization.IStringLocalizer<PixelAndBit.Web.SharedResource> T
+
+@{
+    ViewData["Title"] = T["Home.Title"];
+}
+
+<section class="pb-hero2 pb-fade">
+    <div class="pb-hero2-bg" aria-hidden="true"></div>
+    <div class="pb-hero2-aurora" aria-hidden="true"></div>
+    <div class="pb-hero2-grid" aria-hidden="true"></div>
+    <div class="pb-hero2-sparks" aria-hidden="true">
+        <span class="pb-spark"></span>
+        <span class="pb-spark"></span>
+        <span class="pb-spark"></span>
+    </div>
+
+    <div class="container pb-hero2-inner">
+        <div class="row align-items-center g-4 g-lg-5">
+            <div class="col-12 col-lg-6">
+                <div class="pb-hero2-kicker pb-fade">@T["Home.Hero.Kicker"]</div>
+                <h1 class="pb-hero2-title pb-fade">
+                    <span class="pb-hero2-grad">@T["Home.Hero.Title"]</span>
+                </h1>
+                <p class="pb-hero2-sub pb-fade">
+                    @T["Home.Hero.Sub"]
+                </p>
+
+                <div class="pb-hero2-cta pb-fade">
+                    <a class="btn btn-primary btn-lg pb-btn-glow pb-hero2-primary" asp-controller="Booking" asp-action="Index">@T["Home.CTA.Book"]</a>
+                    <a class="btn btn-outline-primary btn-lg pb-btn-glow" asp-controller="Booking" asp-action="Track">@T["Home.CTA.Track"]</a>
+                    <a class="pb-hero2-link" href="#work">@T["Home.CTA.ViewWork"]</a>
+                </div>
+
+                <div class="pb-hero2-stats pb-fade" aria-label="@T["Hero.Stats.Aria"]">
+                    <div class="pb-hero2-stat">
+                        <div class="pb-hero2-stat-top">@T["Hero.Stat1.Top"]</div>
+                        <div class="pb-hero2-stat-sub">@T["Hero.Stat1.Sub"]</div>
+                    </div>
+                    <div class="pb-hero2-stat">
+                        <div class="pb-hero2-stat-top">@T["Hero.Stat2.Top"]</div>
+                        <div class="pb-hero2-stat-sub">@T["Hero.Stat2.Sub"]</div>
+                    </div>
+                    <div class="pb-hero2-stat">
+                        <div class="pb-hero2-stat-top">@T["Hero.Stat3.Top"]</div>
+                        <div class="pb-hero2-stat-sub">@T["Hero.Stat3.Sub"]</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="pb-hero2-visual pb-fade" aria-label="@T["Hero.Visual.Aria"]" data-parallax data-parallax-strength="10">
+                    <div class="pb-hero2-orb" aria-hidden="true"></div>
+                    <div class="pb-hero2-panel" data-parallax data-parallax-strength="14">
+                        <div class="pb-hero2-panel-top">
+                            <div class="pb-dot"></div>
+                            <div class="pb-dot"></div>
+                            <div class="pb-dot"></div>
+                            <div class="pb-hero2-panel-title">@T["Hero.Visual.Title"]</div>
+                        </div>
+                        <div class="pb-hero2-panel-body">
+                            <div class="pb-hero2-card" data-parallax data-parallax-strength="18">
+                                <div class="pb-hero2-card-title">@T["Hero.Visual.Card1.Title"]</div>
+                                <div class="pb-hero2-line"></div>
+                                <div class="pb-hero2-line pb-hero2-line--short"></div>
+                                <div class="pb-hero2-pills">
+                                    <span class="pb-pill">@T["Hero.Visual.Card1.Pill1"]</span>
+                                    <span class="pb-pill">@T["Hero.Visual.Card1.Pill2"]</span>
+                                    <span class="pb-pill">@T["Hero.Visual.Card1.Pill3"]</span>
+                                </div>
+                            </div>
+                            <div class="pb-hero2-card pb-hero2-card--accent" data-parallax data-parallax-strength="22">
+                                <div class="pb-hero2-card-title">@T["Hero.Visual.Card2.Title"]</div>
+                                <div class="pb-hero2-progress" aria-hidden="true">
+                                    <span class="pb-hero2-step pb-hero2-step--on"></span>
+                                    <span class="pb-hero2-step pb-hero2-step--on"></span>
+                                    <span class="pb-hero2-step"></span>
+                                    <span class="pb-hero2-step"></span>
+                                </div>
+                                <div class="pb-hero2-line"></div>
+                                <div class="pb-hero2-line pb-hero2-line--short"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- removed per request -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pb-benefits-strip pb-fade" aria-label="Benefits">
+    <div class="container">
+        <div class="row g-3">
+            <div class="col-12 col-md-4 d-flex">
+                <div class="pb-benefit pb-anim pb-anim--rise w-100" data-pb-stagger="1">
+                    <div class="pb-benefit-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="pb-benefit-title">@T["Benefits.Card1.Title"]</div>
+                        <div class="pb-benefit-sub text-muted">@T["Benefits.Card1.Sub"]</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 d-flex">
+                <div class="pb-benefit pb-anim pb-anim--tilt w-100" data-pb-stagger="2">
+                    <div class="pb-benefit-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M1 0 0 1l2.2 3.081a.5.5 0 0 0 .657.288l2.2-.79a.5.5 0 0 1 .645.334l.52 1.81a.5.5 0 0 1-.334.645l-2.2.79a.5.5 0 1 0 .364.857l2.2-.79a1.5 1.5 0 0 0 .96-1.89l-.52-1.81a1.5 1.5 0 0 0-1.334-1.056l-2.2.79a.5.5 0 1 1-.645-.334L5 3.79l-.09-.364a.5.5 0 0 1 .334-.645l2.2-.79a.5.5 0 0 1 .645.334l.52 1.81a1.5 1.5 0 0 0 .96 1.89l1.842.732a.5.5 0 0 1 .334.645L13 12l.09.364a.5.5 0 0 1-.334.645l-2.2.79a.5.5 0 0 1-.645-.334L9.5 11.79a.5.5 0 0 0-.657-.288L1 13Z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="pb-benefit-title">@T["Benefits.Card2.Title"]</div>
+                        <div class="pb-benefit-sub text-muted">@T["Benefits.Card2.Sub"]</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 d-flex">
+                <div class="pb-benefit pb-anim pb-anim--glow w-100" data-pb-stagger="3">
+                    <div class="pb-benefit-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.38 3.5h4.237a.5.5 0 0 1 .468.616l-.41 1.588a2.5 2.5 0 0 1-2.392 1.86H8.5l-.5 1h-2l-.5-1H1.5a.5.5 0 0 1-.5-.5v-1.5H5.5a.5.5 0 0 1 .447-.276l.5-1a.5.5 0 0 1 .553-.224H8V3.5H5.5a.5.5 0 0 1-.447-.276L5.52.359z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="pb-benefit-title">@T["Benefits.Card3.Title"]</div>
+                        <div class="pb-benefit-sub text-muted">@T["Benefits.Card3.Sub"]</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pb-saas-section pb-fade" id="value">
+    <div class="container">
+        <div class="pb-saas-section-head">
+            <div class="pb-saas-eyebrow">@T["Value.Eyebrow"]</div>
+            <h2 class="pb-saas-h2">@T["Value.Title"]</h2>
+            <p class="text-muted mb-0">@T["Value.Subtitle"]</p>
+        </div>
+        <div class="row g-4 mt-2">
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="pb-saas-card pb-anim pb-anim--rise w-100" data-pb-stagger="1">
+                    <div class="pb-saas-card-title">@T["Value.Card1.Title"]</div>
+                    <div class="text-muted">@T["Value.Card1.Sub"]</div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="pb-saas-card pb-anim pb-anim--glow w-100" data-pb-stagger="2">
+                    <div class="pb-saas-card-title">@T["Value.Card2.Title"]</div>
+                    <div class="text-muted">@T["Value.Card2.Sub"]</div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="pb-saas-card pb-anim pb-anim--tilt w-100" data-pb-stagger="3">
+                    <div class="pb-saas-card-title">@T["Value.Card3.Title"]</div>
+                    <div class="text-muted">@T["Value.Card3.Sub"]</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pb-saas-section pb-fade" id="features">
+    <div class="container">
+        <div class="pb-saas-section-head">
+            <div class="pb-saas-eyebrow">@T["Features.Eyebrow"]</div>
+            <h2 class="pb-saas-h2">@T["Features.Title"]</h2>
+        </div>
+
+        <div class="row g-4 mt-2">
+            <div class="col-12 col-lg-6 d-flex">
+                <div class="pb-saas-card pb-saas-card--tall pb-anim pb-anim--sheen w-100 d-flex flex-column" data-pb-stagger="1">
+                    <div class="pb-saas-card-title">@T["Features.Card1.Title"]</div>
+                    <div class="text-muted">@T["Features.Card1.Subtitle"]</div>
+                    <div class="pb-saas-card-subgrid mt-3">
+                        <div class="pb-saas-mini">@T["Features.Card1.Tag1"]</div>
+                        <div class="pb-saas-mini">@T["Features.Card1.Tag2"]</div>
+                        <div class="pb-saas-mini">@T["Features.Card1.Tag3"]</div>
+                        <div class="pb-saas-mini">@T["Features.Card1.Tag4"]</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 d-flex">
+                <div class="pb-saas-card pb-saas-card--tall pb-anim pb-anim--pop w-100 d-flex flex-column" data-pb-stagger="2">
+                    <div class="pb-saas-card-title">@T["Features.Card2.Title"]</div>
+                    <div class="text-muted">@T["Features.Card2.Subtitle"]</div>
+                    <div class="mt-auto pt-3">
+                        <a class="btn btn-outline-primary pb-btn-glow" asp-controller="Store" asp-action="Index">@T["Buttons.BrowseStore"]</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pb-saas-section pb-fade" id="services">
+    <div class="container">
+        <div class="pb-saas-section-head">
+            <div class="pb-saas-eyebrow">@T["Services.Eyebrow"]</div>
+            <h2 class="pb-saas-h2">@T["Services.Title"]</h2>
+            <p class="text-muted mb-0">@T["Services.Subtitle"]</p>
+        </div>
+
+        <div class="row g-4 mt-2">
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <a class="pb-service2 pb-fade pb-anim pb-anim--tilt w-100" data-pb-stagger="1" asp-controller="Booking" asp-action="Index">
+                    <div class="pb-service2-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 1a1 1 0 0 1 1 1v1h1.5a.5.5 0 0 1 0 1H9v2h1.5a.5.5 0 0 1 0 1H9v2h1.5a.5.5 0 0 1 0 1H9v1a1 1 0 0 1-2 0v-1H5.5a.5.5 0 0 1 0-1H7V8H5.5a.5.5 0 0 1 0-1H7V5H5.5a.5.5 0 0 1 0-1H7V2a1 1 0 0 1 1-1z"/>
+                        </svg>
+                    </div>
+                    <div class="pb-service2-title">@T["Services.Card1.Title"]</div>
+                    <div class="pb-service2-desc text-muted">@T["Services.Card1.Subtitle"]</div>
+                    <div class="pb-service2-cta">@T["Buttons.BookRepair"]</div>
+                </a>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <a class="pb-service2 pb-fade pb-anim pb-anim--glow w-100" data-pb-stagger="2" asp-controller="Store" asp-action="Index">
+                    <div class="pb-service2-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.61 3.05a1 1 0 0 1 .2.63V7a2 2 0 0 1-2 2h-.5v5a1 1 0 0 1-1 1H4.66a1 1 0 0 1-1-1V9h-.5a2 2 0 0 1-2-2V5.03a1 1 0 0 1 .2-.63l2.61-3.05ZM4.66 9v5h6.68V9H4.66Z"/>
+                        </svg>
+                    </div>
+                    <div class="pb-service2-title">@T["Services.Card2.Title"]</div>
+                    <div class="pb-service2-desc text-muted">@T["Services.Card2.Subtitle"]</div>
+                    <div class="pb-service2-cta">@T["Buttons.BrowseStore"]</div>
+                </a>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <a class="pb-service2 pb-fade pb-anim pb-anim--rise w-100" data-pb-stagger="3" asp-controller="Booking" asp-action="Track">
+                    <div class="pb-service2-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16Zm0-1A7 7 0 1 1 8 1a7 7 0 0 1 0 14Z"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3.75l2.25 1.35a.5.5 0 0 1-.5.86l-2.5-1.5A.5.5 0 0 1 7.5 8V4.5A.5.5 0 0 1 8 4Z"/>
+                        </svg>
+                    </div>
+                    <div class="pb-service2-title">@T["Services.Card3.Title"]</div>
+                    <div class="pb-service2-desc text-muted">@T["Services.Card3.Subtitle"]</div>
+                    <div class="pb-service2-cta">@T["Buttons.TrackTicket"]</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pb-saas-section pb-fade" id="work">
+    <div class="container">
+        <div class="d-flex align-items-end justify-content-between flex-wrap gap-3">
+            <div class="pb-saas-section-head">
+                <div class="pb-saas-eyebrow">@T["Work.Eyebrow"]</div>
+                <h2 class="pb-saas-h2">@T["Work.Title"]</h2>
+                <p class="text-muted mb-0">@T["Work.Subtitle"]</p>
+            </div>
+            <a class="btn btn-outline-primary pb-btn-glow" href="https://www.instagram.com/pixelbit.jo/" target="_blank" rel="noopener noreferrer" aria-label="@T["Work.OpenInstagramAria"]">
+                @T["Work.ViewInstagram"]
+            </a>
+        </div>
+
+        <div class="row g-4 mt-2">
+            <div class="col-12 col-lg-4">
+                <a class="pb-work2 pb-fade pb-anim pb-anim--sheen" data-pb-stagger="1" href="https://www.instagram.com/pixelbit.jo/" target="_blank" rel="noopener noreferrer"
+                   style="--pb-work2-photo:url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80');">
+                    <div class="pb-work2-chip">@T["Work.Card1.Chip"]</div>
+                    <div class="pb-work2-meta">
+                        <div class="pb-work2-title">@T["Work.Card1.Title"]</div>
+                        <div class="pb-work2-sub text-muted">@T["Work.Card1.Sub"]</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-lg-4">
+                <a class="pb-work2 pb-fade pb-anim pb-anim--tilt" data-pb-stagger="2" href="https://www.instagram.com/pixelbit.jo/" target="_blank" rel="noopener noreferrer"
+                   style="--pb-work2-photo:url('https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1400&q=80');">
+                    <div class="pb-work2-chip">@T["Work.Card2.Chip"]</div>
+                    <div class="pb-work2-meta">
+                        <div class="pb-work2-title">@T["Work.Card2.Title"]</div>
+                        <div class="pb-work2-sub text-muted">@T["Work.Card2.Sub"]</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-lg-4">
+                <a class="pb-work2 pb-fade pb-anim pb-anim--glow" data-pb-stagger="3" href="https://www.instagram.com/pixelbit.jo/" target="_blank" rel="noopener noreferrer"
+                   style="--pb-work2-photo:url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1400&q=80');">
+                    <div class="pb-work2-chip">@T["Work.Card3.Chip"]</div>
+                    <div class="pb-work2-meta">
+                        <div class="pb-work2-title">@T["Work.Card3.Title"]</div>
+                        <div class="pb-work2-sub text-muted">@T["Work.Card3.Sub"]</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pb-saas-section pb-fade" id="actions">
+    <div class="container">
+        <div class="pb-saas-section-head">
+            <h2 class="pb-saas-h2">@T["Action.Title"]</h2>
+            <p class="text-muted mb-0">@T["Action.Subtitle"]</p>
+        </div>
+
+        <div class="row g-4 mt-2 pb-action-row">
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="pb-saas-card pb-action-card pb-anim pb-anim--rise w-100 d-flex flex-column" data-pb-stagger="1">
+                    <div class="pb-saas-card-title">@T["Action.Booking.Title"]</div>
+                    <div class="text-muted">@T["Action.Booking.Subtitle"]</div>
+                    <a class="btn btn-outline-primary w-100 pb-btn-glow pb-action-btn mt-auto" asp-controller="Booking" asp-action="Index">@T["Action.Booking.Button"]</a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="pb-saas-card pb-action-card pb-anim pb-anim--pop w-100 d-flex flex-column" data-pb-stagger="2">
+                    <div class="pb-saas-card-title">@T["Action.Tracking.Title"]</div>
+                    <div class="text-muted">@T["Action.Tracking.Subtitle"]</div>
+                    <a class="btn btn-outline-primary w-100 pb-btn-glow pb-action-btn mt-auto" asp-controller="Booking" asp-action="Track">@T["Action.Tracking.Button"]</a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="pb-saas-card pb-action-card pb-anim pb-anim--glow w-100 d-flex flex-column" data-pb-stagger="3">
+                    <div class="pb-saas-card-title">@T["Action.Contact.Title"]</div>
+                    <div class="text-muted">@T["Action.Contact.Subtitle"]</div>
+                    <a class="btn btn-outline-primary w-100 pb-btn-glow pb-action-btn mt-auto" href="https://wa.me/962785291744" target="_blank" rel="noopener noreferrer">@T["Action.Contact.Button"]</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pb-visit pb-fade" id="visit">
+    <div class="pb-visit-bg" aria-hidden="true"></div>
+    <div class="container">
+        <div class="pb-visit-inner">
+            <div class="pb-visit-copy">
+                <div class="pb-visit-title pb-anim pb-anim--rise" data-pb-stagger="1">@T["Visit.Title"]</div>
+                <div class="pb-visit-desc text-muted pb-anim pb-anim--rise" data-pb-stagger="2">@T["Visit.Description"]</div>
+            </div>
+            <div class="pb-visit-actions pb-anim pb-anim--pop" data-pb-stagger="3">
+                <a class="btn btn-primary btn-lg pb-btn-glow pb-visit-btn"
+                   href="https://www.google.com/maps/place/Pixel%26bit/%4032.0207621,35.9043105,15z/data=!4m6!3m5!1s0x151b61d6e8f273a5:0xa63cf2fb0dc9184f!8m2!3d32.010135!4d35.945852!16s%2Fg%2F11z2wkcm62?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="@T["Visit.ButtonAria"]">
+                    <span>@T["Visit.Button"]</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

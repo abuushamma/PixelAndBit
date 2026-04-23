@@ -1,0 +1,62 @@
+@model PixelAndBit.Web.Models.TrackBookingVm
+@inject Microsoft.Extensions.Localization.IStringLocalizer<PixelAndBit.Web.SharedResource> T
+
+@{
+    ViewData["Title"] = T["Track.Title"];
+}
+
+<div class="pb-section pb-fade">
+    <div class="mx-auto" style="max-width: 42rem;">
+        <h1 class="h2 pb-title mb-2">@T["Track.Title"]</h1>
+        <p class="pb-subtitle mb-4">@T["Track.Subtitle"]</p>
+
+        <div class="pb-surface pb-card p-4 p-md-5" style="backdrop-filter: blur(15px);">
+            <form asp-action="Track" method="post" class="pb-fade">
+                @Html.AntiForgeryToken()
+
+                <label asp-for="TicketReference" class="form-label fw-semibold text-muted"></label>
+                <div class="d-flex flex-column flex-sm-row gap-2">
+                    <input asp-for="TicketReference" class="form-control pb-input pb-ltr-inline" placeholder="@T["Track.Placeholder"]" />
+                    <button class="btn btn-primary pb-btn-glow" type="submit" style="min-width: 10rem;">@T["Track.Button"]</button>
+                </div>
+                <span asp-validation-for="TicketReference" class="text-danger small"></span>
+            </form>
+
+            @if (Model?.Result != null)
+            {
+                var status = Model.Result.Status.ToString();
+                <div class="mt-4 pt-4" style="border-top: 1px solid rgba(157,78,221,0.18);">
+                    <div class="d-flex justify-content-between align-items-start gap-3 flex-wrap">
+                        <div>
+                            <div class="small text-muted text-uppercase">Ticket</div>
+                            <div class="font-orbitron" style="letter-spacing: 0.06em;">@Model.Result.TicketReference</div>
+                        </div>
+                        <div class="text-end">
+                            <div class="small text-muted text-uppercase">Status</div>
+                            <span class="badge" style="background: rgba(157,78,221,0.14); border: 1px solid rgba(157,78,221,0.45); color: rgba(255,255,255,0.9);">
+                                @status
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 text-muted">Device</div>
+                    <div style="color: rgba(255,255,255,0.9);">@Model.Result.DeviceModel</div>
+
+                    <div class="mt-3 text-muted">Created</div>
+                    <div style="color: rgba(255,255,255,0.9);">@Model.Result.CreatedAt.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</div>
+
+                    <div class="mt-4 p-3" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(157,78,221,0.20); border-radius: 14px;">
+                        <div class="small text-muted text-uppercase mb-1">Need help?</div>
+                        <div style="color: rgba(255,255,255,0.85);">Pixel&amp;Bit — Amman, Jordan</div>
+                        <div style="color: rgba(255,255,255,0.85);">0785291744</div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

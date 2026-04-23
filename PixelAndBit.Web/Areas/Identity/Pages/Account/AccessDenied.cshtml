@@ -1,0 +1,14 @@
+@page
+@model PixelAndBit.Web.Areas.Identity.Pages.Account.AccessDeniedModel
+@{
+    ViewData["Title"] = "Access denied";
+}
+
+<div class="pb-section pb-fade">
+    <div class="mx-auto text-center" style="max-width: 28rem;">
+        <h1 class="h2 font-orbitron mb-3">Access denied</h1>
+        <p class="text-muted mb-4">You don’t have permission to view this page.</p>
+        <a class="btn btn-primary pb-btn-glow" href="~/">Home</a>
+        <a class="btn btn-outline-primary pb-btn-glow ms-2" asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Sign in</a>
+    </div>
+</div>

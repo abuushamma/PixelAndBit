@@ -1,0 +1,195 @@
+@inject PixelAndBit.Application.Interfaces.ICartService CartService
+@inject Microsoft.Extensions.Localization.IStringLocalizer<PixelAndBit.Web.SharedResource> T
+@using System.Globalization
+
+@{
+    var controller = (ViewContext.RouteData.Values["controller"]?.ToString() ?? "").ToLowerInvariant();
+    var action = (ViewContext.RouteData.Values["action"]?.ToString() ?? "").ToLowerInvariant();
+    var onHome = controller == "home" && action == "index";
+    var cartCount = await CartService.GetItemCountAsync();
+    var isAr = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "ar";
+    var returnUrl = $"{Context.Request.Path}{Context.Request.QueryString}";
+}
+
+<a class="pb-skip-link" href="#main-content">@T["Nav.SkipToContent"]</a>
+
+<nav class="navbar navbar-expand-lg pb-navbar pb-navbar-next @(onHome ? "pb-navbar--home" : "")" aria-label="Primary">
+    <div class="pb-nav-shell w-100 mx-auto px-3">
+        <div class="pb-nav-surface position-relative d-flex flex-wrap align-items-center justify-content-between gap-2 gap-md-3">
+            <a class="navbar-brand pb-navbar-brand-next d-flex align-items-center gap-3 flex-shrink-0 mb-0 py-0"
+               asp-area=""
+               asp-controller="Home"
+               asp-action="Index"
+               aria-label="@T["Nav.BrandHome"]">
+                <span class="pb-navbar-logo-box">
+                    <img class="pb-navbar-brand-img"
+                         src="~/pixelbit-nav-icon.png"
+                         asp-append-version="true"
+                         alt="@T["Nav.BrandLogoAlt"]"
+                         width="42"
+                         height="42"
+                         loading="eager"
+                         decoding="async"
+                         fetchpriority="high" />
+                </span>
+                <span class="pb-navbar-brand-text d-none d-sm-flex flex-column lh-sm">
+                    <span class="pb-navbar-brand-title">@T["Nav.BrandName"]</span>
+                    <span class="pb-navbar-brand-sub">@T["Nav.BrandTagline"]</span>
+                </span>
+            </a>
+
+            <div class="d-lg-none d-flex align-items-center gap-2 ms-auto">
+                <form class="pb-lang-toggle pb-lang-toggle--compact"
+                      asp-controller="Language" asp-action="Set" method="post"
+                      data-active="@(isAr ? "ar" : "en")"
+                      aria-label="@T["Nav.Language.Label"]">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="returnUrl" value="@returnUrl" />
+                    <button type="submit" name="culture" value="en" class="pb-lang-btn @(isAr ? "" : "is-active")" aria-pressed="@(isAr ? "false" : "true")">@T["Nav.Language.EN"]</button>
+                    <button type="submit" name="culture" value="ar" class="pb-lang-btn @(isAr ? "is-active" : "")" aria-pressed="@(isAr ? "true" : "false")">@T["Nav.Language.AR"]</button>
+                </form>
+
+                <a class="pb-nav-icon-btn position-relative" asp-controller="Cart" asp-action="Index" aria-label="@T["Nav.Cart"]">
+                    <span class="d-inline-flex align-items-center" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.402l-9.397.5L4.415 11H13.5a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5z"/>
+                            <path d="M5.5 12a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                        </svg>
+                    </span>
+                    <span class="pb-cart-badge badge rounded-pill @(cartCount == 0 ? "d-none" : "")" id="pb-cart-badge" aria-label="@string.Format(T["Nav.CartItemsAria"], cartCount)">
+                        <span id="pb-cart-count">@cartCount</span>
+                    </span>
+                </a>
+
+                <button class="pb-nav-icon-btn pb-mobile-menu-btn border-0 shadow-none"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#pbMobileNav"
+                        aria-controls="pbMobileNav"
+                        aria-label="@T["Nav.Toggle"]">
+                    <span class="d-inline-flex align-items-center" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+
+            <div class="d-none d-lg-flex pb-nav-collapse flex-lg-grow-1" id="pbNavDesktop">
+                <ul class="navbar-nav pb-nav-pill-wrap mx-lg-auto mb-0">
+                    <li class="nav-item">
+                        <a class="pb-nav-pill-link nav-link @(controller == "home" && action == "index" ? "active" : "")" asp-controller="Home" asp-action="Index">@T["Nav.Home"]</a>
+                    </li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item">
+                            <a class="pb-nav-pill-link nav-link @(controller == "admin" ? "active" : "")" asp-controller="Admin" asp-action="Index">@T["Nav.Admin"]</a>
+                        </li>
+                    }
+                    <li class="nav-item">
+                        <a class="pb-nav-pill-link nav-link @(controller == "store" ? "active" : "")" asp-controller="Store" asp-action="Index">@T["Nav.Store"]</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="pb-nav-pill-link nav-link @(controller == "booking" && action == "index" ? "active" : "")" asp-controller="Booking" asp-action="Index">@T["Nav.Booking"]</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="pb-nav-pill-link nav-link @(controller == "booking" && action == "track" ? "active" : "")" asp-controller="Booking" asp-action="Track">@T["Nav.Track"]</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="pb-nav-pill-link nav-link @(controller == "home" && action == "contact" ? "active" : "")" asp-controller="Home" asp-action="Contact">@T["Nav.Contact"]</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex flex-row align-items-center gap-2 pb-nav-actions pb-nav-actions-end">
+                    <form class="pb-lang-toggle" asp-controller="Language" asp-action="Set" method="post" data-active="@(isAr ? "ar" : "en")" aria-label="@T["Nav.Language.Label"]">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="returnUrl" value="@returnUrl" />
+                        <button type="submit" name="culture" value="en" class="pb-lang-btn @(isAr ? "" : "is-active")" aria-pressed="@(isAr ? "false" : "true")">@T["Nav.Language.EN"]</button>
+                        <button type="submit" name="culture" value="ar" class="pb-lang-btn @(isAr ? "is-active" : "")" aria-pressed="@(isAr ? "true" : "false")">@T["Nav.Language.AR"]</button>
+                    </form>
+
+                    <a class="pb-nav-icon-btn position-relative align-self-center" asp-controller="Cart" asp-action="Index" aria-label="@T["Nav.Cart"]">
+                        <span class="d-inline-flex align-items-center" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.402l-9.397.5L4.415 11H13.5a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5z"/>
+                                <path d="M5.5 12a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                            </svg>
+                        </span>
+                        <span class="pb-cart-badge badge rounded-pill @(cartCount == 0 ? "d-none" : "")" id="pb-cart-badge" aria-label="@string.Format(T["Nav.CartItemsAria"], cartCount)">
+                            <span id="pb-cart-count">@cartCount</span>
+                        </span>
+                    </a>
+
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <a class="pb-nav-link-login d-none d-md-inline-flex align-self-center" asp-controller="Profile" asp-action="Index">@T["Nav.Profile"]</a>
+                        <form method="post" action="~/Identity/Account/Logout" class="d-none d-md-inline">
+                            <button type="submit" class="pb-nav-link-login pb-nav-link--button">@T["Nav.Logout"]</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <a class="pb-nav-link-login d-none d-md-inline-flex align-self-center" href="~/Identity/Account/Login">@T["Nav.SignIn"]</a>
+                    }
+
+                    <a class="pb-nav-cta-gradient align-self-stretch align-self-lg-center" asp-controller="Booking" asp-action="Index">@T["Nav.BookRepair"]</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="offcanvas offcanvas-end pb-offcanvas" tabindex="-1" id="pbMobileNav" aria-labelledby="pbMobileNavLabel">
+    <div class="offcanvas-header pb-offcanvas-header">
+        <div class="d-flex align-items-center gap-3">
+            <span class="pb-navbar-logo-box pb-navbar-logo-box--sm" aria-hidden="true">
+                <img class="pb-navbar-brand-img"
+                     src="~/pixelbit-nav-icon.png"
+                     asp-append-version="true"
+                     alt=""
+                     width="36"
+                     height="36"
+                     loading="eager"
+                     decoding="async" />
+            </span>
+            <div class="lh-sm">
+                <div class="pb-offcanvas-title" id="pbMobileNavLabel">@T["Nav.BrandName"]</div>
+                <div class="pb-offcanvas-sub">@T["Nav.BrandTagline"]</div>
+            </div>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="@T["Nav.Close"]"></button>
+    </div>
+    <div class="offcanvas-body pb-offcanvas-body">
+        <div class="pb-mobile-links">
+            <a class="pb-mobile-nav-link @(controller == "home" && action == "index" ? "is-active" : "")" asp-controller="Home" asp-action="Index" data-bs-dismiss="offcanvas">@T["Nav.Home"]</a>
+            @if (User.IsInRole("Admin"))
+            {
+                <a class="pb-mobile-nav-link @(controller == "admin" ? "is-active" : "")" asp-controller="Admin" asp-action="Index" data-bs-dismiss="offcanvas">@T["Nav.Admin"]</a>
+            }
+            <a class="pb-mobile-nav-link @(controller == "store" ? "is-active" : "")" asp-controller="Store" asp-action="Index" data-bs-dismiss="offcanvas">@T["Nav.Store"]</a>
+            <a class="pb-mobile-nav-link @(controller == "booking" && action == "index" ? "is-active" : "")" asp-controller="Booking" asp-action="Index" data-bs-dismiss="offcanvas">@T["Nav.Booking"]</a>
+            <a class="pb-mobile-nav-link @(controller == "booking" && action == "track" ? "is-active" : "")" asp-controller="Booking" asp-action="Track" data-bs-dismiss="offcanvas">@T["Nav.Track"]</a>
+            <a class="pb-mobile-nav-link @(controller == "home" && action == "contact" ? "is-active" : "")" asp-controller="Home" asp-action="Contact" data-bs-dismiss="offcanvas">@T["Nav.Contact"]</a>
+        </div>
+
+        <div class="pb-offcanvas-sep"></div>
+
+        <div class="d-grid gap-2">
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <a class="btn btn-outline-primary pb-btn-glow" asp-controller="Profile" asp-action="Index" data-bs-dismiss="offcanvas">@T["Nav.Profile"]</a>
+                <form method="post" action="~/Identity/Account/Logout">
+                    <button type="submit" class="btn btn-outline-primary pb-btn-glow w-100">@T["Nav.Logout"]</button>
+                </form>
+            }
+            else
+            {
+                <a class="btn btn-outline-primary pb-btn-glow" href="~/Identity/Account/Login" data-bs-dismiss="offcanvas">@T["Nav.SignIn"]</a>
+            }
+
+            <a class="btn btn-primary btn-lg pb-btn-glow pb-hero2-primary" asp-controller="Booking" asp-action="Index" data-bs-dismiss="offcanvas">
+                @T["Nav.BookRepair"]
+            </a>
+        </div>
+    </div>
+</div>

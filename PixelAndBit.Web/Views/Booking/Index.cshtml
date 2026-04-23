@@ -1,0 +1,80 @@
+@model PixelAndBit.Web.Models.CreateBookingVm
+@inject Microsoft.Extensions.Localization.IStringLocalizer<PixelAndBit.Web.SharedResource> T
+
+@{
+    ViewData["Title"] = T["Booking.Title"];
+}
+
+<div class="pb-section pb-fade">
+    <div class="mb-4">
+        <h1 class="h2 mb-2 pb-title">@T["Booking.Title"]</h1>
+        <div class="pb-subtitle">@T["Booking.Subtitle"]</div>
+    </div>
+
+    <div class="pb-surface pb-card p-4 p-md-5 pb-fade" style="backdrop-filter: blur(15px);">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <form asp-action="Confirm" method="post" class="needs-validation" novalidate>
+            @Html.AntiForgeryToken()
+
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <label asp-for="CustomerName" class="form-label fw-semibold text-muted"></label>
+                    <input asp-for="CustomerName" class="form-control pb-input" placeholder="@T["Booking.CustomerName.Placeholder"]" autocomplete="name" />
+                    <span asp-validation-for="CustomerName" class="text-danger small"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="PhoneNumber" class="form-label fw-semibold text-muted"></label>
+                    <input asp-for="PhoneNumber" class="form-control pb-input pb-ltr-inline" placeholder="@T["Booking.PhoneNumber.Placeholder"]" autocomplete="tel" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger small"></span>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <div class="form-label fw-semibold text-muted mb-2">@T["Booking.DeviceType"]</div>
+                <div class="d-flex flex-wrap gap-2">
+                    <input type="hidden" asp-for="DeviceType" />
+
+                    <button type="button" class="pb-chip" data-device="Phone">@T["Booking.Device.Phone"]</button>
+                    <button type="button" class="pb-chip" data-device="Laptop">@T["Booking.Device.Laptop"]</button>
+                    <button type="button" class="pb-chip" data-device="Console">@T["Booking.Device.Console"]</button>
+                </div>
+                <div class="small text-muted mt-2">@T["Booking.DeviceType.Help"]</div>
+            </div>
+
+            <div class="row g-3 mb-3">
+                <div class="col-12">
+                    <label asp-for="DeviceModel" class="form-label fw-semibold text-muted"></label>
+                    <input asp-for="DeviceModel" class="form-control pb-input" placeholder="@T["Booking.DeviceModel.Placeholder"]" />
+                    <span asp-validation-for="DeviceModel" class="text-danger small"></span>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label asp-for="IssueDescription" class="form-label fw-semibold text-muted"></label>
+                <textarea asp-for="IssueDescription" rows="4" class="form-control pb-input" placeholder="@T["Booking.IssueDescription.Placeholder"]"></textarea>
+                <span asp-validation-for="IssueDescription" class="text-danger small"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg w-100 pb-btn-glow">
+                @T["Booking.Confirm"]
+            </button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        (() => {
+            const hidden = document.querySelector('input[name="DeviceType"]');
+            const chips = Array.from(document.querySelectorAll(".pb-chip"));
+            const set = (value) => {
+                if (hidden) hidden.value = value;
+                chips.forEach(c => c.classList.toggle("pb-chip-active", c.dataset.device === value));
+            };
+            chips.forEach(c => c.addEventListener("click", () => set(c.dataset.device)));
+            set(hidden?.value || "Phone");
+        })();
+    </script>
+}

@@ -1,0 +1,61 @@
+@{
+    ViewData["Title"] = "Contact";
+}
+
+@inject Microsoft.Extensions.Localization.IStringLocalizer<PixelAndBit.Web.SharedResource> T
+
+<div class="pb-section pb-fade">
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+        <div>
+            <h1 class="h2 pb-title mb-1">@T["Contact.Header"]</h1>
+            <div class="pb-subtitle">@T["Contact.Subtitle"]</div>
+        </div>
+        <a class="btn btn-primary btn-lg pb-btn-glow pb-saas-primary" href="https://wa.me/962785291744" target="_blank" rel="noopener noreferrer">
+            @T["Contact.WhatsAppSupport"]
+        </a>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-12 col-lg-5">
+            <div class="pb-surface pb-card p-4 p-md-5" style="backdrop-filter: blur(15px);">
+                <div class="text-muted small text-uppercase mb-2">@T["Contact.StoreLabel"]</div>
+                <div style="color: rgba(255,255,255,0.92); font-size: 1.05rem;">
+                    Pixel&amp;Bit
+                </div>
+                <div class="mt-2 text-muted">Tabarbour, Ad-Dabbabah Circle</div>
+                <div class="text-muted">Amman, Jordan</div>
+
+                <div class="mt-4 pt-4" style="border-top: 1px solid rgba(157,78,221,0.18);">
+                    <div class="text-muted small text-uppercase mb-2">@T["Contact.PhoneLabel"]</div>
+                    <a class="font-orbitron pb-ltr-inline" style="letter-spacing: 0.06em;" href="tel:0785291744"><span class="pb-ltr-inline">0785291744</span></a>
+                </div>
+
+                <div class="mt-4 d-grid gap-2">
+                    <a class="btn btn-outline-primary pb-btn-glow" href="https://wa.me/962785291744" target="_blank" rel="noopener noreferrer">
+                        @T["Contact.ChatWhatsApp"]
+                    </a>
+                    <a class="btn btn-outline-primary pb-btn-glow" href="https://www.google.com/maps/place/Pixel%26bit/%4032.0207621,35.9043105,15z/data=!4m6!3m5!1s0x151b61d6e8f273a5:0xa63cf2fb0dc9184f!8m2!3d32.010135!4d35.945852!16s%2Fg%2F11z2wkcm62?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+                        @T["Contact.OpenMaps"]
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-7">
+            <div class="pb-surface pb-card p-2 p-md-3" style="backdrop-filter: blur(15px);">
+                <div style="border-radius: 14px; overflow: hidden; border: 1px solid rgba(157,78,221,0.18);">
+                    <iframe
+                        title="Pixel&Bit Location Map"
+                        width="100%"
+                        height="420"
+                        style="border:0; filter: grayscale(0.25) contrast(1.05);"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps?q=32.010135,35.945852&output=embed">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

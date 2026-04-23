@@ -1,0 +1,52 @@
+@model IReadOnlyList<PixelAndBit.Domain.Entities.Booking>
+
+@{
+    ViewData["Title"] = "My Repairs";
+}
+
+<div class="pb-section pb-fade">
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+        <h1 class="h2 font-orbitron mb-0">My Repairs</h1>
+        <a class="btn btn-outline-primary pb-btn-glow" asp-controller="Profile" asp-action="Index">Back</a>
+    </div>
+
+    <div class="pb-surface pb-card p-3 p-md-4 pb-fade" style="backdrop-filter: blur(15px);">
+        @if (Model.Count == 0)
+        {
+            <div class="text-muted">No repair requests yet.</div>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-dark align-middle mb-0" style="--bs-table-bg: transparent; --bs-table-striped-bg: rgba(255,255,255,0.03);">
+                    <thead>
+                    <tr style="color: rgba(255,255,255,0.85);">
+                        <th>Ticket</th>
+                        <th>Device</th>
+                        <th>Status</th>
+                        <th class="text-end">Est. cost</th>
+                        <th class="text-end">Created</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var b in Model)
+                    {
+                        <tr>
+                            <td class="font-orbitron" style="letter-spacing: 0.05em;">@b.TicketReference</td>
+                            <td>@b.DeviceModel</td>
+                            <td>
+                                <span class="badge" style="background: rgba(195,32,173,0.14); border: 1px solid rgba(195,32,173,0.45); color: rgba(255,255,255,0.9);">
+                                    @b.Status
+                                </span>
+                            </td>
+                            <td class="text-end">@b.EstimatedCost.ToString("0.##") JOD</td>
+                            <td class="text-end text-muted">@b.CreatedAt.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div>
+

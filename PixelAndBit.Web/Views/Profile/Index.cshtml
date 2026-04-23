@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<div class="pb-section pb-fade">
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+        <h1 class="h2 font-orbitron mb-0">Profile</h1>
+        <span class="badge" style="background: rgba(195,32,173,0.14); border: 1px solid rgba(195,32,173,0.45); color: rgba(255,255,255,0.9);">
+            @User.Identity?.Name
+        </span>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-12 col-lg-6">
+            <div class="pb-surface pb-card p-4 pb-fade" style="backdrop-filter: blur(15px);">
+                <div class="text-muted small text-uppercase mb-2">Orders</div>
+                <div class="d-grid gap-2">
+                    <a class="btn btn-primary pb-btn-glow" asp-action="MyOrders">My Orders</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-6">
+            <div class="pb-surface pb-card p-4 pb-fade" style="backdrop-filter: blur(15px);">
+                <div class="text-muted small text-uppercase mb-2">Repairs</div>
+                <div class="d-grid gap-2">
+                    <a class="btn btn-primary pb-btn-glow" asp-action="MyRepairs">My Repairs</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
