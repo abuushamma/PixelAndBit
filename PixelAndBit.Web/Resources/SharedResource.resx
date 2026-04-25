@@ -35,9 +35,34 @@
   <data name="Nav.BrandName" xml:space="preserve"><value>Pixel &amp; Bit</value></data>
   <data name="Nav.BrandTagline" xml:space="preserve"><value>Professional repair</value></data>
   <data name="Nav.BrandLogoAlt" xml:space="preserve"><value>Pixel &amp; Bit logo</value></data>
+  <data name="Nav.Close" xml:space="preserve"><value>Close</value></data>
+  <data name="Nav.Account" xml:space="preserve"><value>Account</value></data>
+  <data name="Nav.MyOrders" xml:space="preserve"><value>My orders</value></data>
+  <data name="Nav.MyRepairs" xml:space="preserve"><value>My repairs</value></data>
 
   <!-- Footer -->
   <data name="Footer.Location" xml:space="preserve"><value>Tabarbour, Ad-Dabbabah Circle</value></data>
+  <data name="Footer.BackToTop" xml:space="preserve"><value>Back to top</value></data>
+  <data name="Footer.BackToTop.Aria" xml:space="preserve"><value>Back to top of page</value></data>
+  <data name="Footer.Column.Repair" xml:space="preserve"><value>Repair services</value></data>
+  <data name="Footer.Column.Support" xml:space="preserve"><value>Customer support</value></data>
+  <data name="Footer.Column.Visit" xml:space="preserve"><value>Visit us</value></data>
+  <data name="Footer.Link.AboutUs" xml:space="preserve"><value>About us</value></data>
+  <data name="Footer.Link.OurServices" xml:space="preserve"><value>Our services</value></data>
+  <data name="Footer.Link.WhyChooseUs" xml:space="preserve"><value>Why choose us</value></data>
+  <data name="Footer.Link.Repair.Ps5" xml:space="preserve"><value>PlayStation repair</value></data>
+  <data name="Footer.Link.Repair.Laptop" xml:space="preserve"><value>Laptop repair</value></data>
+  <data name="Footer.Link.Repair.PC" xml:space="preserve"><value>PC repair</value></data>
+  <data name="Footer.Link.Repair.Smartphone" xml:space="preserve"><value>Smartphone repair</value></data>
+  <data name="Footer.Link.Repair.Thermal" xml:space="preserve"><value>Thermal paste &amp; cooling</value></data>
+  <data name="Footer.Link.Warranty" xml:space="preserve"><value>Warranty policy</value></data>
+  <data name="Footer.Link.Faq" xml:space="preserve"><value>FAQ</value></data>
+  <data name="Footer.Visit.Address" xml:space="preserve"><value>Tabarbour, Ad-Dabbabah Circle, Amman</value></data>
+  <data name="Footer.Visit.Phone" xml:space="preserve"><value>Phone: 0785291744</value></data>
+  <data name="Footer.Visit.Instagram" xml:space="preserve"><value>Instagram: pixelbit.jo</value></data>
+  <data name="Footer.Visit.Hours" xml:space="preserve"><value>Working hours</value></data>
+  <data name="Footer.Copyright" xml:space="preserve"><value>© 2026 Pixel&amp;Bit. All rights reserved.</value></data>
+  <data name="Footer.Privacy" xml:space="preserve"><value>Privacy</value></data>
 
   <!-- Home -->
   <data name="Home.Title" xml:space="preserve"><value>Home</value></data>
@@ -209,6 +234,26 @@
   <data name="Contact.OpenMaps" xml:space="preserve"><value>Open in Google Maps</value></data>
   <data name="Contact.StoreLabel" xml:space="preserve"><value>Store</value></data>
   <data name="Contact.PhoneLabel" xml:space="preserve"><value>Phone</value></data>
+  <data name="Contact.HoursLabel" xml:space="preserve"><value>Working hours</value></data>
+  <data name="Contact.HoursBody" xml:space="preserve"><value>Sat–Thu: 11:00–20:00 • Fri: closed (hours may change on holidays—message us to confirm)</value></data>
+
+  <!-- Site FAQ (home layout) -->
+  <data name="SiteFaq.Title" xml:space="preserve"><value>Common questions</value></data>
+  <data name="SiteFaq.Intro" xml:space="preserve"><value>Quick answers about booking, tracking, consoles, and warranty at Pixel&amp;Bit.</value></data>
+  <data name="SiteFaq.Q1" xml:space="preserve"><value>How do I book a repair?</value></data>
+  <data name="SiteFaq.A1" xml:space="preserve"><value>Use &quot;Book repair&quot; in the menu, sign in if asked, and submit your device details. You will receive a ticket you can use for updates.</value></data>
+  <data name="SiteFaq.Q2" xml:space="preserve"><value>Can I track my repair?</value></data>
+  <data name="SiteFaq.A2" xml:space="preserve"><value>Yes. Open Track, enter your ticket code, or sign in and open My repairs for tickets linked to your account.</value></data>
+  <data name="SiteFaq.Q3" xml:space="preserve"><value>Do you repair gaming consoles?</value></data>
+  <data name="SiteFaq.A3" xml:space="preserve"><value>We service PlayStation and other consoles—book with your model and symptoms so we can plan diagnostics and parts.</value></data>
+  <data name="SiteFaq.Q4" xml:space="preserve"><value>Do you offer warranty?</value></data>
+  <data name="SiteFaq.A4" xml:space="preserve"><value>Repairs are covered by a limited shop warranty on workmanship and installed parts, as described in our policy. Ask in store or see Privacy &amp; warranty for details.</value></data>
+
+  <!-- Privacy (page) -->
+  <data name="Privacy.Title" xml:space="preserve"><value>Privacy &amp; policies</value></data>
+  <data name="Privacy.Lead" xml:space="preserve"><value>This page explains how we handle your information. For the full policy text, expand or replace this section to match your legal requirements.</value></data>
+  <data name="Privacy.WarrantyTitle" xml:space="preserve"><value>Limited warranty</value></data>
+  <data name="Privacy.WarrantyBody" xml:space="preserve"><value>Completed repairs may include a limited warranty covering workmanship and parts we supply, for a period we confirm on your ticket or receipt. Warranty does not cover new damage, liquid, drops, or third‑party work after pickup. If something fails under normal use within the warranty window, contact us on WhatsApp or visit the shop with your ticket. We will inspect the device and honor the policy where it applies. Specific terms can vary by service—ask for details at drop‑off.</value></data>
 
   <!-- Validation -->
   <data name="Validation.Required" xml:space="preserve"><value>This field is required.</value></data>

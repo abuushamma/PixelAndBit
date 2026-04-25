@@ -56,10 +56,35 @@
                             <path d="M5.5 12a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
                         </svg>
                     </span>
-                    <span class="pb-cart-badge badge rounded-pill @(cartCount == 0 ? "d-none" : "")" id="pb-cart-badge" aria-label="@string.Format(T["Nav.CartItemsAria"], cartCount)">
-                        <span id="pb-cart-count">@cartCount</span>
+                    <span class="pb-cart-badge js-pb-cart-badge badge rounded-pill @(cartCount == 0 ? "d-none" : "")" aria-label="@string.Format(T["Nav.CartItemsAria"], cartCount)">
+                        <span class="js-pb-cart-count">@cartCount</span>
                     </span>
                 </a>
+
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <div class="dropdown pb-nav-user-dd d-md-none">
+                        <button class="btn pb-nav-user-btn" type="button" id="pbUserMenuMobile" data-bs-toggle="dropdown" data-bs-offset="0,6" data-bs-auto-close="outside" aria-expanded="false" aria-label="@T["Nav.Account"]" title="@T["Nav.Account"]">
+                            <span class="pb-nav-user-icon" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m0 1.5A5.5 5.5 0 0 0 1 15v.5A.5.5 0 0 0 1.5 16H14a.5.5 0 0 0 .5-.5V15a5.5 5.5 0 0 0-5.5-5.5H8Z"/>
+                                </svg>
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end pb-user-dropdown" aria-labelledby="pbUserMenuMobile">
+                            <li><a class="dropdown-item" asp-controller="Profile" asp-action="Index">@T["Nav.Profile"]</a></li>
+                            <li><a class="dropdown-item" asp-controller="Profile" asp-action="MyOrders">@T["Nav.MyOrders"]</a></li>
+                            <li><a class="dropdown-item" asp-controller="Profile" asp-action="MyRepairs">@T["Nav.MyRepairs"]</a></li>
+                            <li><hr class="dropdown-divider" role="none" /></li>
+                            <li>
+                                <form method="post" action="~/Identity/Account/Logout" class="px-2 m-0">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-link dropdown-item text-start py-2 w-100">@T["Nav.Logout"]</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                }
 
                 <button class="pb-nav-icon-btn pb-mobile-menu-btn border-0 shadow-none"
                         type="button"
@@ -115,17 +140,34 @@
                                 <path d="M5.5 12a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
                             </svg>
                         </span>
-                        <span class="pb-cart-badge badge rounded-pill @(cartCount == 0 ? "d-none" : "")" id="pb-cart-badge" aria-label="@string.Format(T["Nav.CartItemsAria"], cartCount)">
-                            <span id="pb-cart-count">@cartCount</span>
+                        <span class="pb-cart-badge js-pb-cart-badge badge rounded-pill @(cartCount == 0 ? "d-none" : "")" aria-label="@string.Format(T["Nav.CartItemsAria"], cartCount)">
+                            <span class="js-pb-cart-count">@cartCount</span>
                         </span>
                     </a>
 
                     @if (User.Identity?.IsAuthenticated == true)
                     {
-                        <a class="pb-nav-link-login d-none d-md-inline-flex align-self-center" asp-controller="Profile" asp-action="Index">@T["Nav.Profile"]</a>
-                        <form method="post" action="~/Identity/Account/Logout" class="d-none d-md-inline">
-                            <button type="submit" class="pb-nav-link-login pb-nav-link--button">@T["Nav.Logout"]</button>
-                        </form>
+                        <div class="dropdown pb-nav-user-dd d-none d-md-block align-self-center">
+                            <button class="btn pb-nav-user-btn" type="button" id="pbUserMenuDesktop" data-bs-toggle="dropdown" data-bs-offset="0,8" data-bs-auto-close="outside" aria-expanded="false" aria-label="@T["Nav.Account"]" title="@T["Nav.Account"]">
+                                <span class="pb-nav-user-icon" aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m0 1.5A5.5 5.5 0 0 0 1 15v.5A.5.5 0 0 0 1.5 16H14a.5.5 0 0 0 .5-.5V15a5.5 5.5 0 0 0-5.5-5.5H8Z"/>
+                                    </svg>
+                                </span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end pb-user-dropdown" aria-labelledby="pbUserMenuDesktop">
+                                <li><a class="dropdown-item" asp-controller="Profile" asp-action="Index">@T["Nav.Profile"]</a></li>
+                                <li><a class="dropdown-item" asp-controller="Profile" asp-action="MyOrders">@T["Nav.MyOrders"]</a></li>
+                                <li><a class="dropdown-item" asp-controller="Profile" asp-action="MyRepairs">@T["Nav.MyRepairs"]</a></li>
+                                <li><hr class="dropdown-divider" role="none" /></li>
+                                <li>
+                                    <form method="post" action="~/Identity/Account/Logout" class="px-2 m-0">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="btn btn-link dropdown-item text-start py-2 w-100">@T["Nav.Logout"]</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
                     }
                     else
                     {
@@ -178,7 +220,10 @@
             @if (User.Identity?.IsAuthenticated == true)
             {
                 <a class="btn btn-outline-primary pb-btn-glow" asp-controller="Profile" asp-action="Index" data-bs-dismiss="offcanvas">@T["Nav.Profile"]</a>
-                <form method="post" action="~/Identity/Account/Logout">
+                <a class="btn btn-outline-primary pb-btn-glow" asp-controller="Profile" asp-action="MyOrders" data-bs-dismiss="offcanvas">@T["Nav.MyOrders"]</a>
+                <a class="btn btn-outline-primary pb-btn-glow" asp-controller="Profile" asp-action="MyRepairs" data-bs-dismiss="offcanvas">@T["Nav.MyRepairs"]</a>
+                <form method="post" action="~/Identity/Account/Logout" class="m-0">
+                    @Html.AntiForgeryToken()
                     <button type="submit" class="btn btn-outline-primary pb-btn-glow w-100">@T["Nav.Logout"]</button>
                 </form>
             }

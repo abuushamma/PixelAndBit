@@ -2,11 +2,26 @@
 bin/
 obj/
 
-# Local IDE user files
-*.csproj.user
+# Publish / packaging
+publish/
+*.zip
+
+# Compiled artifacts
+*.dll
+*.exe
+*.pdb
+*.deps.json
+*.runtimeconfig.json
 
 # Node / Tailwind
 node_modules/
+
+# Logs and temp
+*.log
+*.tmp
+
+# Local IDE user files
+*.csproj.user
 
 # Windows metadata
 desktop.ini

@@ -35,9 +35,34 @@
   <data name="Nav.BrandName" xml:space="preserve"><value>Pixel &amp; Bit</value></data>
   <data name="Nav.BrandTagline" xml:space="preserve"><value>صيانة باحتراف</value></data>
   <data name="Nav.BrandLogoAlt" xml:space="preserve"><value>شعار Pixel &amp; Bit</value></data>
+  <data name="Nav.Close" xml:space="preserve"><value>إغلاق</value></data>
+  <data name="Nav.Account" xml:space="preserve"><value>الحساب</value></data>
+  <data name="Nav.MyOrders" xml:space="preserve"><value>طلباتي</value></data>
+  <data name="Nav.MyRepairs" xml:space="preserve"><value>صياناتي</value></data>
 
   <!-- Footer -->
   <data name="Footer.Location" xml:space="preserve"><value>طبربور، دوّار الدبابة</value></data>
+  <data name="Footer.BackToTop" xml:space="preserve"><value>العودة للأعلى</value></data>
+  <data name="Footer.BackToTop.Aria" xml:space="preserve"><value>العودة لأعلى الصفحة</value></data>
+  <data name="Footer.Column.Repair" xml:space="preserve"><value>خدمات الصيانة</value></data>
+  <data name="Footer.Column.Support" xml:space="preserve"><value>دعم العملاء</value></data>
+  <data name="Footer.Column.Visit" xml:space="preserve"><value>زيارتنا</value></data>
+  <data name="Footer.Link.AboutUs" xml:space="preserve"><value>من نحن</value></data>
+  <data name="Footer.Link.OurServices" xml:space="preserve"><value>خدماتنا</value></data>
+  <data name="Footer.Link.WhyChooseUs" xml:space="preserve"><value>لماذا نحن</value></data>
+  <data name="Footer.Link.Repair.Ps5" xml:space="preserve"><value>صيانة PlayStation</value></data>
+  <data name="Footer.Link.Repair.Laptop" xml:space="preserve"><value>صيانة لابتوب</value></data>
+  <data name="Footer.Link.Repair.PC" xml:space="preserve"><value>صيانة كمبيوتر</value></data>
+  <data name="Footer.Link.Repair.Smartphone" xml:space="preserve"><value>صيانة هاتف</value></data>
+  <data name="Footer.Link.Repair.Thermal" xml:space="preserve"><value>معالج حراري وتبريد</value></data>
+  <data name="Footer.Link.Warranty" xml:space="preserve"><value>سياسة الضمان</value></data>
+  <data name="Footer.Link.Faq" xml:space="preserve"><value>الأسئلة الشائعة</value></data>
+  <data name="Footer.Visit.Address" xml:space="preserve"><value>طبربور، دوّار الدبابة، عمان</value></data>
+  <data name="Footer.Visit.Phone" xml:space="preserve"><value>هاتف: 0785291744</value></data>
+  <data name="Footer.Visit.Instagram" xml:space="preserve"><value>إنستغرام: pixelbit.jo</value></data>
+  <data name="Footer.Visit.Hours" xml:space="preserve"><value>أوقات الدوام</value></data>
+  <data name="Footer.Copyright" xml:space="preserve"><value>© 2026 Pixel&amp;Bit. جميع الحقوق محفوظة.</value></data>
+  <data name="Footer.Privacy" xml:space="preserve"><value>الخصوصية</value></data>
 
   <!-- Home -->
   <data name="Home.Title" xml:space="preserve"><value>الرئيسية</value></data>
@@ -209,6 +234,24 @@
   <data name="Contact.OpenMaps" xml:space="preserve"><value>افتح على خرائط Google</value></data>
   <data name="Contact.StoreLabel" xml:space="preserve"><value>المتجر</value></data>
   <data name="Contact.PhoneLabel" xml:space="preserve"><value>الهاتف</value></data>
+  <data name="Contact.HoursLabel" xml:space="preserve"><value>أوقات الدوام</value></data>
+  <data name="Contact.HoursBody" xml:space="preserve"><value>السبت–الخميس: 11:00–20:00 • الجمعة: إجازة (قد تتغيير الأوقات في العطلات—تواصل معنا للتأكيد)</value></data>
+
+  <data name="SiteFaq.Title" xml:space="preserve"><value>أسئلة شائعة</value></data>
+  <data name="SiteFaq.Intro" xml:space="preserve"><value>إجابات سريعة عن الحجز، التتبع، أجهزة الألعاب، والضمان في Pixel&amp;Bit.</value></data>
+  <data name="SiteFaq.Q1" xml:space="preserve"><value>كيف أحجز صيانة؟</value></data>
+  <data name="SiteFaq.A1" xml:space="preserve"><value>استخدم «احجز صيانة» في القائمة، وسجّل دخولك عند الطلب، وأرسل تفاصيل جهازك. ستحصل على تذكرة تستخدمها لمتابعة التحديثات.</value></data>
+  <data name="SiteFaq.Q2" xml:space="preserve"><value>هل يمكن تتبع صيانتي؟</value></data>
+  <data name="SiteFaq.A2" xml:space="preserve"><value>نعم. افتح «التتبع» وأدخل رقم التذكرة، أو سجّل دخولك واذهب إلى «صياناتي» للتذاكر المرتبطة بحسابك.</value></data>
+  <data name="SiteFaq.Q3" xml:space="preserve"><value>هل تصلحون كونسول ألعاب؟</value></data>
+  <data name="SiteFaq.A3" xml:space="preserve"><value>نخدم PlayStation وغيره من الأجهزة—احجز مع ذكر الموديل والأعراض لنخطط للفحص والقطع.</value></data>
+  <data name="SiteFaq.Q4" xml:space="preserve"><value>هل يوجد ضمان؟</value></data>
+  <data name="SiteFaq.A4" xml:space="preserve"><value>تخضع الصيانة المنجزة لضمان محدود من المتجر يشمل العمل والقطع المثبّتة، كما هو مذكور في السياسة. اطلب في المتجر أو راجع صفحة الخصوصية والضمان للتفاصيل.</value></data>
+
+  <data name="Privacy.Title" xml:space="preserve"><value>الخصوصية والسياسات</value></data>
+  <data name="Privacy.Lead" xml:space="preserve"><value>تشرح هذه الصفحة كيف نتعامل مع معلوماتك. يمكنك توسيع أو استبدال النص ليتوافق مع الالتزامات القانونية.</value></data>
+  <data name="Privacy.WarrantyTitle" xml:space="preserve"><value>ضمان محدود</value></data>
+  <data name="Privacy.WarrantyBody" xml:space="preserve"><value>قد تتضمن الصيانة المكتملة ضمانًا محدودًا يغطي العمل والقطع التي نوفرها، لمدة نُحددها على التذكرة أو الإيصال. لا يشمل الضمان أضرارًا جديدة، سوائل، سقوطًا، أو عمل أطراف ثالثة بعد الاستلام. عند فشل خلال نافذة الضمان باستعمال طبيعي، تواصل عبر واتساب أو زر المتجر مع التذكرة. تختلف التفاصيل حسب الخدمة—اسأل عند الاستلام.</value></data>
 
   <!-- Validation -->
   <data name="Validation.Required" xml:space="preserve"><value>هذا الحقل مطلوب.</value></data>

@@ -1,0 +1,26 @@
+@inject Microsoft.Extensions.Localization.IStringLocalizer<PixelAndBit.Web.SharedResource> T
+
+<section id="site-faq" class="pb-site-faq" aria-labelledby="site-faq-title">
+    <div class="container py-4 py-lg-5">
+        <h2 id="site-faq-title" class="pb-site-faq__title">@T["SiteFaq.Title"]</h2>
+        <p class="pb-site-faq__intro text-muted mb-4">@T["SiteFaq.Intro"]</p>
+        <div class="pb-site-faq__list">
+            <details class="pb-faq-item">
+                <summary class="pb-faq-item__q">@T["SiteFaq.Q1"]</summary>
+                <div class="pb-faq-item__a">@T["SiteFaq.A1"]</div>
+            </details>
+            <details class="pb-faq-item">
+                <summary class="pb-faq-item__q">@T["SiteFaq.Q2"]</summary>
+                <div class="pb-faq-item__a">@T["SiteFaq.A2"]</div>
+            </details>
+            <details class="pb-faq-item">
+                <summary class="pb-faq-item__q">@T["SiteFaq.Q3"]</summary>
+                <div class="pb-faq-item__a">@T["SiteFaq.A3"]</div>
+            </details>
+            <details class="pb-faq-item">
+                <summary class="pb-faq-item__q">@T["SiteFaq.Q4"]</summary>
+                <div class="pb-faq-item__a">@T["SiteFaq.A4"]</div>
+            </details>
+        </div>
+    </div>
+</section>

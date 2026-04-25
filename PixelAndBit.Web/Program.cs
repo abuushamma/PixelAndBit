@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using PixelAndBit.Application.Interfaces;
 using PixelAndBit.Infrastructure.Email;
 using PixelAndBit.Infrastructure.Data;
@@ -84,10 +86,17 @@ builder.Services.AddDbContext<PixelBitDbContext>(options =>
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 {
-    options.Password.RequireDigit = false;
-    options.Password.RequiredLength = 6;
-    options.Password.RequireNonAlphanumeric = false;
-    options.Password.RequireUppercase = false;
+    // Password policy (align Register / Reset pages MinimumLength with Identity)
+    options.Password.RequiredLength = 8;
+    options.Password.RequireUppercase = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireDigit = true;
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequiredUniqueChars = 3;
+    // Account lockout
+    options.Lockout.AllowedForNewUsers = true;
+    options.Lockout.MaxFailedAccessAttempts = 5;
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
     options.SignIn.RequireConfirmedAccount = true;
 })
 .AddEntityFrameworkStores<PixelBitDbContext>()
@@ -156,7 +165,14 @@ Task EnsureDatabaseInitializedAsync()
                     startupLogger.LogInformation("Seeding initial data (Development)...");
                     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
                     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-                    await DbSeeder.SeedAsync(db, userManager, roleManager);
+                    var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+                    await DbSeeder.SeedAsync(
+                        db,
+                        userManager,
+                        roleManager,
+                        app.Configuration,
+                        logger,
+                        app.Environment.IsDevelopment());
                     startupLogger.LogInformation("Database seeding complete.");
                 }
             }

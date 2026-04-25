@@ -20,7 +20,7 @@ public class ResetPasswordModel : PageModel
     public class InputModel
     {
         [Required]
-        [StringLength(100, MinimumLength = 6)]
+        [StringLength(100, MinimumLength = 8)]
         [DataType(DataType.Password)]
         [Display(Name = "New password")]
         public string Password { get; set; } = string.Empty;

@@ -70,24 +70,54 @@
       });
     }
 
-    // Cart: add-to-cart (AJAX) + badge pop
-    const badge = document.getElementById("pb-cart-badge");
-    const countEl = document.getElementById("pb-cart-count");
+    // Cart: add-to-cart (AJAX) + badge pop (synced across mobile + desktop)
+    const badges = Array.from(document.querySelectorAll(".js-pb-cart-badge"));
+    const countEls = Array.from(document.querySelectorAll(".js-pb-cart-count"));
 
-    const popBadge = () => {
-      if (!badge) return;
-      badge.classList.remove("pb-cart-pop");
-      void badge.offsetWidth;
-      badge.classList.add("pb-cart-pop");
+    const popBadges = () => {
+      for (const b of badges) {
+        b.classList.remove("pb-cart-pop");
+        void b.offsetWidth;
+        b.classList.add("pb-cart-pop");
+      }
     };
 
     const setCount = (next) => {
-      if (!countEl) return;
-      const prev = Number(countEl.textContent || "0");
-      countEl.textContent = String(next);
-      if (badge) badge.classList.toggle("d-none", next === 0);
-      if (next !== prev) popBadge();
+      if (!countEls.length) return;
+      const prev = Number(countEls[0].textContent || "0");
+      for (const el of countEls) el.textContent = String(next);
+      for (const b of badges) b.classList.toggle("d-none", next === 0);
+      if (next !== prev) popBadges();
     };
+
+    // Back to top (footer)
+    const backTop = document.getElementById("pb-back-to-top");
+    if (backTop) {
+      backTop.addEventListener("click", () => {
+        const top = document.getElementById("page-top");
+        (top || document.documentElement).scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+        backTop.blur();
+      });
+    }
+
+    // Account dropdown: show on hover for fine pointers (desktop); tap/click still works
+    if (window.bootstrap?.Dropdown && window.matchMedia("(pointer: fine) and (min-width: 768px)").matches) {
+      for (const dd of document.querySelectorAll(".pb-nav-user-dd")) {
+        const btn = dd.querySelector('[data-bs-toggle="dropdown"]');
+        if (!btn) continue;
+        const inst = window.bootstrap.Dropdown.getOrCreateInstance
+          ? window.bootstrap.Dropdown.getOrCreateInstance(btn, { autoClose: true })
+          : new window.bootstrap.Dropdown(btn, { autoClose: true });
+        let hideT;
+        dd.addEventListener("mouseenter", () => {
+          clearTimeout(hideT);
+          inst.show();
+        });
+        dd.addEventListener("mouseleave", () => {
+          hideT = window.setTimeout(() => inst.hide(), 140);
+        });
+      }
+    }
 
     document.addEventListener("click", async (e) => {
       const btn = e.target?.closest?.("[data-add-to-cart]");

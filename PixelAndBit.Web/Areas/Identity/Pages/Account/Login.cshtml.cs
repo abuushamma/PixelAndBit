@@ -72,10 +72,24 @@ public class LoginModel : PageModel
             Input.Email,
             Input.Password,
             Input.RememberMe,
-            lockoutOnFailure: false);
+            lockoutOnFailure: true);
 
         if (result.Succeeded)
             return LocalRedirect(ReturnUrl);
+
+        if (result.IsLockedOut)
+        {
+            ModelState.AddModelError(
+                string.Empty,
+                "This account is locked after too many failed sign-in attempts. Please try again in 15 minutes.");
+            return Page();
+        }
+
+        if (result.IsNotAllowed)
+        {
+            ModelState.AddModelError(string.Empty, "Sign in is not allowed for this account.");
+            return Page();
+        }
 
         ModelState.AddModelError(string.Empty, "Invalid login attempt.");
         return Page();
