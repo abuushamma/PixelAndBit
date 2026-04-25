@@ -2,7 +2,7 @@
 
 Pixel & Bit is a full-stack tech repair platform built with ASP.NET Core MVC.
 
-Live Demo: https://pixel-and-bit.com
+Official Website: https://pixel-and-bit.com
 
 ## Features
 
